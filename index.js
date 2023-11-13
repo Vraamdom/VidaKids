@@ -29,29 +29,26 @@ app.get('/productos', (req, res) =>{
         "Precio":"3500"
     })
 })
-
-app.get('/login', (req, res) =>{
-    res.render( 'login')
+app.get('/lista_clientes', (req, res) =>{
+    res.render('listarClientes')
+})
+app.post('/lista_clientes', (req, res) =>{ //nombre ruta
+    res.render('listarClientes') //nombre archivo a renderizar con hbs
 })
 
-app.get('/tablas', (req, res) =>{
-    res.render( 'tables_dynamic')
+app.get('/lista_ventas', (req, res) =>{
+    res.render('listar_ventas')
 })
-
-app.get('/validacion', (req, res) =>{
-    res.render( 'form_validation')
-})
-
-app.get('/calendario', (req, res) =>{
-    res.render( 'calendar')
-})
-
-app.get('/formulario', (req, res) =>{
-    res.render( 'formulario')
+app.post('/lista_ventas', (req, res) =>{
+    res.render('listar_ventas')
 })
 
 app.get('*', (req, res) =>{
-    res.render('page_404')
+    res.render('404')
+})
+
+app.post('*', (req, res) =>{
+    res.render('404')
 })
 
 app.listen(port, ()=>{
