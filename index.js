@@ -1,59 +1,98 @@
-const express = require('express')
-
-const hbs = require('hbs')
-const path = require('path')
-
-const app = express()
-
-const port = 8181
+const express = require('express');
+const path = require('path');
+const hbs = require ('hbs');
+const  app =express();
+const port = 8585;
 
 
-// Contenido estatico del servidor en este caso son las vistas
-app.use(express.static('public'))
+app.use(express.static('public'));
+app.set('views',path.join(__dirname + '/public/views'));
+app.set('view engine', 'hbs');
 
-// El path asigna la ubicacion de los archivos que se le aplicara el hsb
-app.set('views', path.join(__dirname+'/public/views'))
-// Se usa la ingeneria de vistas de hbs
-app.set('view engine', 'hbs')
+hbs.registerPartials(__dirname + '/public/views/partials');
 
-hbs.registerPartials(__dirname + '/public/views/partials')
-
-
-app.get('/', (req, res) =>{
-    res.render( 'index3')
+app.get('/',(req,res)=>{
+    res.render('index')
 })
-
-app.get('/productos', (req, res) =>{
-    res.render( 'productos',{
-        "nombreProducto":"Arepas",
-        "Precio":"3500"
+app.get('/lista_Acudiente',(req,res)=>{
+    res.render('lista_Acudiente')
+})
+app.get('/registrar_Acudiente',(req,res)=>{
+    res.render('registrar_Acudiente',{
+        nombre : 'jose luis madrid'
+    })
+})
+app.get('/login',(req,res)=>{
+    res.render('login')
+})
+app.get('/agregar_evento',(req,res)=>{
+    res.render('agregar_evento',{
+        nombre : 'vramdom'
     })
 })
 
-app.get('/login', (req, res) =>{
-    res.render( 'login')
+app.get('/agregar_participante',(req,res)=>{
+    res.render('agregar_participante',{
+        nombre : 'vramdom'
+    })
 })
 
-app.get('/tablas', (req, res) =>{
-    res.render( 'tables_dynamic')
+app.get('/eventos',(req,res)=>{
+    res.render('calendar',{
+        nombre : 'vramdom'
+    })
 })
 
-app.get('/validacion', (req, res) =>{
-    res.render( 'form_validation')
+app.get('/editar_evento',(req,res)=>{
+    res.render('editar_evento',{
+        nombre : 'vramdom'
+    })
 })
 
-app.get('/calendario', (req, res) =>{
-    res.render( 'calendar')
+app.get('/editar_tipo_participante',(req,res)=>{
+    res.render('editar_tipo_participante',{
+        nombre : 'vramdom'
+    })
 })
 
-app.get('/formulario', (req, res) =>{
-    res.render( 'formulario')
+app.get('/editar_vehiculo',(req,res)=>{
+    res.render('editar_vehiculo',{
+        nombre : 'vramdom'
+    })
 })
 
-app.get('*', (req, res) =>{
-    res.render('page_404')
+app.post('/agregar_evento',(req,res)=>{
+    res.render('agregar_evento')
 })
 
+app.post('/editar_evento',(req,res)=>{
+    res.render('editar_evento')
+})
+
+app.post('/editar_tipo_participante',(req,res)=>{
+    res.render('editar_tipo_participante')
+})
+
+app.get('/editar_vehiculo',(req,res)=>{
+    res.render('editar_vehiculo')
+})
+
+
+app.post('/registrar_Acudiente',(req,res)=>{
+    res.render('registrar_Acudiente')
+})
+app.post('/lista_Acudiente',(req,res)=>{
+    res.render('lista_Acudiente')
+})
+app.post('/login',(req,res)=>{
+    res.render('login')
+})
+app.post('/index',(req,res)=>{
+    res.render('index')
+})
+app.get('*',(req,res)=>{
+    res.render(__dirname+'/public/views/404.hbs')
+})
 app.listen(port, ()=>{
-    console.log(`Listen to port: ${port}`)
+    console.log(`Listen to port ${port}`);
 })
