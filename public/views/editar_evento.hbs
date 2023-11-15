@@ -291,58 +291,96 @@
                        
                             </div>
                         </div>
+                        
+                    </div>
+                    
+                    <div class="bloque-tabla">
+                            <section class="search_icon">
 
-                        <div class="formulario">
-                            <form action="" id="form_tipo_participante">
-                                <div class="formulario_bloque-uno">
-                                    <div class="input-control">
-                                      <label for="select">Tipo participante</label>
-                                        <select name="" id="tipo_part">
-                                            <option value="seleccionar">seleccionar</option>
-                                            <option value="Beneficiario">Beneficiario</option>
-                                            <option value="Profesional">Profesional voluntario</option>
-                                            <option value="Acudiente">Acudiente</option>
-                                            <option value="Administrador">Administrador</option>
-                                            <option value="Diriector_a">Dir. Administrativo</option>
-                                        </select>
-                                        <div class="error"></div>
-                                    </div>
-
-                                    <div class="input-control">
-                                        <label for="text">Genero biologico</label>
-                                        <select name="" id="genero_b">
-                                            <option value="seleccionar">seleccionar</option>
-                                            <option value="Masculino">Masculino</option>
-                                            <option value="Femenino">Femenino</option>
-                                            <option value="Otro">Otro</option>
-                                        </select>
-                                        <div class="error"></div>
-                                    </div>
-                                    
-                                    <div class="input-control">
-                                        <label for="text">Numero de invitados por tipo participante </label>
-                                        <input type="text" name="" id="nro_invitados_p">
-                                        <div class="error"></div>
-                                    </div>
-                                    
+                                <div class="titulo_s">
+                                    <h4>Lista tipo de participantes</h4>
+                                
                                 </div>
-                                <div class="formulario_bloque-dos">
-                                    <div class="input-control">
-                                        <label for="text">Edad mínima participante</label>
-                                        <input type="text" name="" id="edad_min">
-                                        <div class="error"></div>
-                                    </div>
 
-                                    <div class="input-control">
-                                        <label for="text">Edad máxima participante</label>
-                                        <input type="text" name="" id="edad_max">
-                                        <div class="error"></div>
-                                    </div>
-                                    
-                                </div>
-                                <button type="submit" class="boton" name="" id="boton">Editar tipo participante</button>
+                            </section>
 
-                            </form>
+
+                            <main>
+                                <div class="tabla">
+                                        <table id="tblData" class="table table-striped">
+                                            <thead>
+                                            <tr>
+                                                <th scope="col">ID</th>
+                                                <th scope="col">Tipo participante</th>
+                                                <th scope="col">Edad minima</th>
+                                                <th scope="col">Edad maxima</th>
+                                                <th scope="col">genero biologico</th>
+                                                <th scope="col">Nro invitados por tipo</th>
+                                                <th scope="col" class="th_center">Opciones</th>
+
+
+                                            </tr>
+                                            </thead>
+                                            <tbody>
+                                            <tr>
+                                                <td>1</td>
+                                                <td>Beneficiario</td>
+                                                <td>0</td>
+                                                <td>25</td>
+                                                <td>Masculino</td>
+                                                <td>20</td>
+                                                <td class="Opciones">
+
+                                            <div>
+                                            <a href="editar_tipo_participante"><img src="../images/editar.png" alt="icon" class="opc_edit"></a>
+                                            </div>
+                                            <div>
+                                            <img src="../images/borrar.png" alt="icon" class="opc_delete" onclick="mostrarAlerta()">
+                                            </div>
+                                        </td>
+
+
+                                            </tr>
+                                            <tr>
+                                                <td>2</td>
+                                                <td>Acudiente</td>
+                                                <td>2</td>
+                                                <td>6</td>
+                                                <td>15</td>
+                                                <td>3</td>
+                                                <td class="Opciones">
+    
+                                            <div>
+                                            <a href="editar_tipo_participante"><img src="../images/editar.png" alt="icon" class="opc_edit"></a>
+                                            </div>
+                                            <div>
+                                            <img src="../images/borrar.png" alt="icon" class="opc_delete" onclick="mostrarAlerta()">
+                                            </div>
+                                        </td>
+
+
+                                            </tr>
+                                            <tr>
+                                                <td>3</td>
+                                                <td>Administrativo</td>
+                                                <td></td>
+                                                <td>18</td>
+                                                <td>32</td>
+                                                <td>5</td>
+                                                <td class="Opciones">
+
+                                            <div>
+                                            <a href="editar_tipo_participante"><img src="../images/editar.png" alt="icon" class="opc_edit"></a>
+                                            </div>
+                                            <div>
+                                            <img src="../images/borrar.png" alt="icon" class="opc_delete" onclick="mostrarAlerta()">
+                                            </div>
+                                        </td>
+                                            </tbody>
+                                        </table>
+                                    </div>
+                            
+                            </main>
                         </div>
                     </div>
 
@@ -355,37 +393,87 @@
                             </div>
                         </div>
 
-                        <div class="formulario">
-                            <form action="" id="form_vehiculos">
-                                <div class="formulario_bloque-uno">
-                                    <div class="input-control">
-                                      <label for="select">Tipo vehículo</label>
-                                        <select name="" id="tipo_ve">
-                                            <option value="seleccionar">seleccionar</option>
-                                            <option value="Bus">Bus</option>
-                                            <option value="Carro">Carro</option>
-                                            <option value="Furgoneta">Furgoneta</option>
-                                        </select>
-                                        <div class="error"></div>
-                                    </div>
+                    </div>
 
-                                    <div class="input-control">
-                                        <label for="text">Placa del vehículo</label>
-                                        <input type="text" name="" id="placa_ve">
-                                        <div class="error"></div>
-                                    </div>
-                                    
-                                    <div class="input-control">
-                                        <label for="text">Puestos del vehículo</label>
-                                        <input type="text" name="" id="puestos_ve">
-                                        <div class="error"></div>
-                                    </div>
-                                    <button type="submit" class="boton" name="" id="boton">Editar vehículo contratado</button>
+                    <div class="bloque-tabla">
+                            <section class="search_icon">
+
+                                <div class="titulo_s">
+                                    <h4>Lista vehículos contratados</h4>
+                                
                                 </div>
 
-                            </form>
+                            </section>
+
+
+                            <main>
+                                <div class="tabla">
+                                        <table id="tblData" class="table table-striped">
+                                            <thead>
+                                            <tr>
+                                                <th scope="col">ID</th>
+                                                <th scope="col">Tipo vehículo</th>
+                                                <th scope="col">Puestos</th>
+                                                <th scope="col">Placa vehículo</th>
+                                                <th scope="col" class="th_center">Opciones</th>
+
+
+                                            </tr>
+                                            </thead>
+                                            <tbody>
+                                            <tr>
+                                                <td>1</td>
+                                                <td>Bus</td>
+                                                <td>20</td>
+                                                <td>AAS 320</td>
+                                                <td class="Opciones">
+
+                                            <div>
+                                            <a href="editar_vehiculo"><img src="../images/editar.png" alt="icon" class="opc_edit"></a>
+                                            </div>
+                                            <div>
+                                            <img src="../images/borrar.png" alt="icon" class="opc_delete" onclick="mostrarAlerta()">
+                                            </div>
+                                        </td>
+
+
+                                            </tr>
+                                            <tr>
+                                                <td>2</td>
+                                                <td>Carro</td>
+                                                <td>4</td>
+                                                <td>FCV 320</td>
+                                                <td class="Opciones">
+    
+                                            <div>
+                                            <a href="editar_vehiculo"><img src="../images/editar.png" alt="icon" class="opc_edit"></a>
+                                            </div>
+                                            <div>
+                                            <img src="../images/borrar.png" alt="icon" class="opc_delete" onclick="mostrarAlerta()">
+                                            </div>
+                                        </td>
+
+
+                                            </tr>
+                                            <tr>
+                                                <td>3</td>
+                                                <td>Furgoneta</td>
+                                                <td>20</td>
+                                                <td>JCV 223</td>
+                                                <td class="Opciones">
+
+                                            <div>
+                                            <a href="editar_vehiculo"><img src="../images/editar.png" alt="icon" class="opc_edit"></a>
+                                            </div>
+                                            <div>
+                                            <img src="../images/borrar.png" alt="icon" class="opc_delete" onclick="mostrarAlerta()">
+                                            </div>
+                                        </td>
+                                            </tbody>
+                                        </table>
+                                    </div>
+                            </main>
                         </div>
-                    </div>
                         
 
                 </div>

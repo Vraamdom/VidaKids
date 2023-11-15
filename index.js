@@ -14,17 +14,6 @@ hbs.registerPartials(__dirname + '/public/views/partials');
 app.get('/',(req,res)=>{
     res.render('index')
 })
-app.get('/lista_Acudiente',(req,res)=>{
-    res.render('lista_Acudiente')
-})
-app.get('/registrar_Acudiente',(req,res)=>{
-    res.render('registrar_Acudiente',{
-        nombre : 'jose luis madrid'
-    })
-})
-app.get('/login',(req,res)=>{
-    res.render('login')
-})
 app.get('/agregar_evento',(req,res)=>{
     res.render('agregar_evento',{
         nombre : 'vramdom'

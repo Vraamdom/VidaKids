@@ -83,12 +83,6 @@ formulario_vehiculos.addEventListener('submit', e =>{
     validateInputs_vehiculos()
 })
 
-formulario_participantes.addEventListener('submit', e =>{
-    e.preventDefault()
-
-
-    validateInputs_participante()
-})
 
 
 
@@ -156,7 +150,6 @@ const validateInputs_Evento = () =>{
 
     // VALIDA CAMPOS AGREGAR EVENTO
     const nombre_evento_value = nombre_evento.value.trim()
-
     const encargado_funda_value = encargado_funda.value.trim()
     const nit_empresa_value = nit_empresa.value.trim()
     const estado_evento_value = estado_evento.value.trim()
@@ -370,93 +363,3 @@ const validateInputs_vehiculos= () =>{
     }
 }
 
-// VALIDACION AGREGAR UN PARTICIPANTE
-
-const validateInputs_participante= () =>{
-
-
-    // VALIDA CAMPOS AGREGAR UN PARTICIPANTE
-    const nombre_participante_value = nombre_participante.value.trim()
-    const edad_value = edad.value.trim()
-    const genero_b_p_value = genero_b_p.value.trim()
-    const asistencia_value = asistencia.value.trim()
-    const tipo_do_value = tipo_do.value.trim()
-    const placa_vehiculo_p_value = placa_vehiculo_p.value.trim()
-    const tipo_part_value = tipo_part.value.trim()
-    const nro_documento_value = nro_documento.value.trim()
-
-    // valido nombre
-    if(nombre_participante_value === ""){
-        setError(nombre_participante, 'No puedes dejar este campo vacio.')
-    }else if(!validarNombre(nombre_participante_value)){
-        setError(nombre_participante, 'Se debe iniciar con la letra mayuscula y no se permiten caracteres especiales.')
-    }else{
-        setSuccess(nombre_participante)
-    }
-
-    // valido select
-    if(genero_b_p_value === "seleccionar"){
-        setError(genero_b_p, 'Debes de seleccionar una opción valida')
-    }else{
-        setSuccess(genero_b_p)
-    }
-
-    if(asistencia_value === "seleccionar"){
-        setError(asistencia, 'No puedes dejar este campo vacio.')
-    }else{
-        setSuccess(asistencia)
-    }
-
-    if(tipo_do_value === "seleccionar"){
-        setError(tipo_do, 'No puedes dejar este campo vacio.')
-    }else{
-        setSuccess(tipo_do)
-    }
-
-    if(tipo_part_value === "seleccionar"){
-        setError(tipo_part, 'No puedes dejar este campo vacio.')
-    }else{
-        setSuccess(tipo_do)
-    }
-
-    // valido placa
-    if(placa_vehiculo_p_value === ""){
-        setError(placa_vehiculo_p, 'No puedes dejar este campo vacio.')
-    }else if(!validarPlaca(placa_vehiculo_p_value)){
-        setError(placa_vehiculo_p, 'No ingresaste una placa de vehículo valida.')
-    }else{
-        setSuccess(placa_vehiculo_p)
-    }
-
-
-
-  
-
-    // valido numeros
-    if(edad_value === ""){
-        setError(edad, 'No puedes dejar este campo vacio.')
-    }else if(!validarNumero(edad_value)){
-        setError(edad, 'Solo puedes ingresar números.')
-    }else{
-        setSuccess(edad)
-    }
-
-    if(nro_documento_value === ""){
-        setError(nro_documento, 'No puedes dejar este campo vacio.')
-    }else if(!validarNumero(nro_documento_value)){
-        setError(nro_documento, 'Solo puedes ingresar números.')
-    }else{
-        setSuccess(nro_documento_value)
-    }
-
-
-    if(validarNumero(nro_documento_value) && validarNumero(edad_value) && validarPlaca(placa_vehiculo_p_value) && validarNombre(nombre_participante_value) && genero_b_p_value != "seleccionar" && asistencia_value != "seleccionar" && tipo_do_value != "seleccionar" && tipo_part_value != "seleccionar"){
-        Swal.fire({
-            position: "center",
-            icon: "success",
-            title: "El participante ha sido registrado.",
-            showConfirmButton: false,
-            timer: 1500
-          });
-    }
-}
