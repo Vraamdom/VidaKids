@@ -20,7 +20,7 @@ hbs.registerPartials(__dirname + '/public/views/partials')
 
 
 app.get('/', (req, res) =>{
-    res.render( 'index3')
+    res.render('index')
 })
 
 app.get('/productos', (req, res) =>{
@@ -39,6 +39,36 @@ app.post('/lista_clientes', (req, res) =>{ //nombre ruta
 app.get('/lista_ventas', (req, res) =>{
     res.render('listar_ventas')
 })
+
+app.get('/agregar_ventas', (req, res) =>{
+    res.render('agregar_venta')
+})
+
+app.post('/agregar_ventas', (req, res) =>{
+    res.render('agregar_venta')
+})
+
+app.get('/agregar_clientes', (req, res) =>{
+    res.render('agregar_cliente')
+})
+
+app.post('/agregar_clientes', (req, res) =>{
+    res.render('agregar_cliente')
+})
+
+app.get('/editar_clientes', (req, res) =>{
+    res.render('editar_cliente')
+})
+
+app.post('/editar_clientes', (req, res) =>{
+    res.render('editar_cliente')
+})
+
+
+app.get('/detalle_ventas', (req, res) =>{
+    res.render('detalle_venta')
+})
+
 app.post('/lista_ventas', (req, res) =>{
     res.render('listar_ventas')
 })
