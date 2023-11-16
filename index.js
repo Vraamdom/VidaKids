@@ -80,7 +80,7 @@ app.post('/index',(req,res)=>{
     res.render('index')
 })
 app.get('*',(req,res)=>{
-    res.render(__dirname+'/public/views/404.hbs')
+    res.render('404')
 })
 app.listen(port, ()=>{
     console.log(`Listen to port ${port}`);

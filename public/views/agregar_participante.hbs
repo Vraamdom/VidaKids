@@ -298,7 +298,7 @@
 
                         <main>
                             <div class="tabla">
-                                    <table id="tblData" class="table table-striped">
+                                    <table id="tblP" class="table table-striped">
                                         <thead>
                                         <tr>
                                             <th scope="col">ID</th>
@@ -316,164 +316,28 @@
                                         </tr>
                                         </thead>
                                         <tbody>
-                                        <tr>
-                                            <td>1</td>
-                                            <td>Benefeciario</td>
-                                            <td>Juan alberto Cañas</td>
-                                            <td>12</td>
-                                            <td>Masculino</td>
-                                            <td>   </td>
-                                            <td>T.I</td>
-                                            <td>12324354657</td>
-                                            <td>Asiste</td>
-                                            <td class="Opciones">
+                                    
 
-                                        
-                                        <div>
-                                        <img src="../images/borrar.png" alt="icon" class="opc_delete" onclick="mostrarAlerta()">
-                                        </div>
-                                    </td>
-
-
-                                        </tr>
-                                        <tr>
-                                            <td>2</td>
-                                            <td>Administrador</td>
-                                            <td>Alejandra Gomez</td>
-                                            <td>24</td>
-                                            <td>Femenino</td>
-                                            <td>ZXC 746</td>
-                                            <td>C.C</td>
-                                            <td>10024388653</td>
-                                            <td>Asiste</td>
-                                            <td class="Opciones">
-
-                                        
-                                        <div>
-                                        <img src="../images/borrar.png" alt="icon" class="opc_delete" onclick="mostrarAlerta()">
-                                        </div>
-                                    </td>
-
-
-                                        </tr>
-                                        <tr>
-                                             <td>1</td>
-                                            <td>Profesional</td>
-                                            <td>Sara Usuga</td>
-                                            <td>18</td>
-                                            <td>Femenino</td>
-                                            <td>   </td>
-                                            <td>C.C</td>
-                                            <td>20089354657</td>
-                                            <td>No asiste</td>
-                                            <td class="Opciones">
-
-                                        <div>
-                                        <img src="../images/borrar.png" alt="icon" class="opc_delete" onclick="mostrarAlerta()">
-                                        </div>
-                                    </td>
                                         </tbody>
                                     </table>
+                                    <div class="pagination" id="pagination_p">
+                                    <button class="btn btn-info" id="prevPage_p">Anterior</button>
+                                    <span id="currentPage_p">
+                                        <h6>1</h6>
+                                    </span>
+                                    <button class="btn btn-info" id="nextPage_p">Siguiente</button>
+                                </div>
                                 </div>
                         </main>
                     </div>
 
-                    <div class="bloque-tabla">
-                            <section class="search_icon">
-
-                                <div class="titulo_s">
-                                    <h4>Lista tipo de participantes</h4>
-                                
-                                </div>
-
-                            </section>
-
-
-                            <main>
-                                <div class="tabla">
-                                        <table id="tblData" class="table table-striped">
-                                            <thead>
-                                            <tr>
-                                                <th scope="col">ID</th>
-                                                <th scope="col">Tipo participante</th>
-                                                <th scope="col">Edad minima</th>
-                                                <th scope="col">Edad maxima</th>
-                                                <th scope="col">genero biologico</th>
-                                                <th scope="col">Nro invitados por tipo</th>
-                                                <th scope="col" class="th_center">Opciones</th>
-
-
-                                            </tr>
-                                            </thead>
-                                            <tbody>
-                                            <tr>
-                                                <td>1</td>
-                                                <td>Beneficiario</td>
-                                                <td>0</td>
-                                                <td>25</td>
-                                                <td>Masculino</td>
-                                                <td>20</td>
-                                                <td class="Opciones">
-
-                                            <div>
-                                            <a href="editar_tipo_participante"><img src="../images/editar.png" alt="icon" class="opc_edit"></a>
-                                            </div>
-                                            <div>
-                                            <img src="../images/borrar.png" alt="icon" class="opc_delete" onclick="mostrarAlerta()">
-                                            </div>
-                                        </td>
-
-
-                                            </tr>
-                                            <tr>
-                                                <td>2</td>
-                                                <td>Acudiente</td>
-                                                <td>2</td>
-                                                <td>6</td>
-                                                <td>15</td>
-                                                <td>3</td>
-                                                <td class="Opciones">
-    
-                                            <div>
-                                            <a href="editar_tipo_participante"><img src="../images/editar.png" alt="icon" class="opc_edit"></a>
-                                            </div>
-                                            <div>
-                                            <img src="../images/borrar.png" alt="icon" class="opc_delete" onclick="mostrarAlerta()">
-                                            </div>
-                                        </td>
-
-
-                                            </tr>
-                                            <tr>
-                                                <td>3</td>
-                                                <td>Administrativo</td>
-                                                <td></td>
-                                                <td>18</td>
-                                                <td>32</td>
-                                                <td>5</td>
-                                                <td class="Opciones">
-
-                                            <div>
-                                            <a href="editar_tipo_participante"><img src="../images/editar.png" alt="icon" class="opc_edit"></a>
-                                            </div>
-                                            <div>
-                                            <img src="../images/borrar.png" alt="icon" class="opc_delete" onclick="mostrarAlerta()">
-                                            </div>
-                                        </td>
-                                            </tbody>
-                                        </table>
-                                    </div>
-                            
-                            </main>
-                        </div>
-                    </div>
 
                     <div class="bloque-tabla">
                         <section class="search_icon">
 
                             <div class="titulo_s">
-                                <h4>Lista vehículos contratados</h4>
-                            
+                                <h4>Lista tipo de participantes</h4>
+
                             </div>
 
                         </section>
@@ -481,8 +345,52 @@
 
                         <main>
                             <div class="tabla">
-                                    <table id="tblData" class="table table-striped">
-                                        <thead>
+                                <table id="tblPart" class="table table-striped">
+                                    <thead>
+                                        <tr>
+                                            <th scope="col">ID</th>
+                                            <th scope="col">Tipo participante</th>
+                                            <th scope="col">Edad minima</th>
+                                            <th scope="col">Edad maxima</th>
+                                            <th scope="col">genero biologico</th>
+                                            <th scope="col">Nro invitados por tipo</th>
+                                            <th scope="col" class="th_center">Opciones</th>
+
+
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        
+                                    </tbody>
+                                </table>
+                                <div class="pagination" id="pagination_part">
+                                    <button class="btn btn-info" id="prevPage_part">Anterior</button>
+                                    <span id="currentPage_part">
+                                        <h6>1</h6>
+                                    </span>
+                                    <button class="btn btn-info" id="nextPage_part">Siguiente</button>
+                                </div>
+
+                            </div>
+
+                        </main>
+                    </div>
+
+                    <div class="bloque-tabla">
+                        <section class="search_icon">
+
+                            <div class="titulo_s">
+                                <h4>Lista vehículos contratados</h4>
+
+                            </div>
+
+                        </section>
+
+
+                        <main>
+                            <div class="tabla">
+                                <table id="tblVeh" class="table table-striped">
+                                    <thead>
                                         <tr>
                                             <th scope="col">ID</th>
                                             <th scope="col">Tipo vehículo</th>
@@ -492,59 +400,20 @@
 
 
                                         </tr>
-                                        </thead>
-                                        <tbody>
-                                        <tr>
-                                            <td>1</td>
-                                            <td>Bus</td>
-                                            <td>20</td>
-                                            <td>AAS 320</td>
-                                            <td class="Opciones">
-
-                                        <div>
-                                        <a href="editar_vehiculo"><img src="../images/editar.png" alt="icon" class="opc_edit"></a>
-                                        </div>
-                                        <div>
-                                        <img src="../images/borrar.png" alt="icon" class="opc_delete" onclick="mostrarAlerta()">
-                                        </div>
-                                    </td>
-
-
-                                        </tr>
-                                        <tr>
-                                            <td>2</td>
-                                            <td>Carro</td>
-                                            <td>4</td>
-                                            <td>FCV 320</td>
-                                            <td class="Opciones">
-
-                                        <div>
-                                        <a href="editar_vehiculo"><img src="../images/editar.png" alt="icon" class="opc_edit"></a>
-                                        </div>
-                                        <div>
-                                        <img src="../images/borrar.png" alt="icon" class="opc_delete" onclick="mostrarAlerta()">
-                                        </div>
-                                    </td>
-
-
-                                        </tr>
-                                        <tr>
-                                            <td>3</td>
-                                            <td>Furgoneta</td>
-                                            <td>20</td>
-                                            <td>JCV 829</td>
-                                            <td class="Opciones">
-
-                                        <div>
-                                        <a href="editar_vehiculo"><img src="../images/editar.png" alt="icon" class="opc_edit"></a>
-                                        </div>
-                                        <div>
-                                        <img src="../images/borrar.png" alt="icon" class="opc_delete" onclick="mostrarAlerta()">
-                                        </div>
-                                    </td>
-                                        </tbody>
-                                    </table>
+                                    </thead>
+                                    <tbody>
+                                        
+                                    </tbody>
+                                </table>
+                                <div class="pagination" id="pagination_ve">
+                                    <button class="btn btn-info" id="prevPage_ve">Anterior</button>
+                                    <span id="currentPage_ve">
+                                        <h6>1</h6>
+                                    </span>
+                                    <button class="btn btn-info" id="nextPage_ve">Siguiente</button>
                                 </div>
+
+                            </div>
                         </main>
                     </div>
 

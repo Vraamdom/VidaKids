@@ -9,8 +9,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
     <title>Vidakids |Home</title>
-{{>header}}
-    
+    {{>header}}
+
 </head>
 
 <body class="nav-md">
@@ -19,7 +19,9 @@
             <div class="col-md-3 left_col">
                 <div class="left_col scroll-view">
                     <div class="navbar nav_title" style="border: 0;">
-                        <a href="/" class="site_title"><h1>Vida<span>kids</span></h1></a>
+                        <a href="/" class="site_title">
+                            <h1>Vida<span>kids</span></h1>
+                        </a>
                     </div>
 
                     <div class="clearfix"></div>
@@ -27,7 +29,7 @@
                     <!-- menu profile quick info -->
                     <div class="profile clearfix">
                         <div class="profile_pic">
-                           <img src="images/img.jpg" alt="..." class="img-circle profile_img">
+                            <img src="images/img.jpg" alt="..." class="img-circle profile_img">
                         </div>
                         <div class="profile_info">
                             <span>Welcome,</span>
@@ -43,14 +45,15 @@
                         <div class="menu_section">
                             <h3>General</h3>
                             <ul class="nav side-menu">
-                                <li><a><i class="fa fa-home"></i> Home <span class="fa fa-chevron-down" ></span></a>
+                                <li><a><i class="fa fa-home"></i> Home <span class="fa fa-chevron-down"></span></a>
                                     <ul class="nav child_menu">
                                         <li><a href="/">Inicio</a></li>
                                         {{!-- <li><a href="index2.html">Dashboard2</a></li>
                                         <li><a href="index3.html">Dashboard3</a></li> --}}
                                     </ul>
                                 </li>
-                                <li><a><i class="fa fa-edit"></i> Acudientes <span class="fa fa-chevron-down"></span></a>
+                                <li><a><i class="fa fa-edit"></i> Acudientes <span
+                                            class="fa fa-chevron-down"></span></a>
                                     <ul class="nav child_menu">
                                         {{!-- <li><a href="form.html">General Form</a></li> --}}
                                         <li><a href="lista_Acudiente">Lista de Acudiente</a></li>
@@ -60,7 +63,8 @@
                                         <li><a href="form_buttons.html">Form Buttons</a></li> --}}
                                     </ul>
                                 </li>
-                                <li><a><i class="fa fa-desktop"></i> Servicios <span class="fa fa-chevron-down"></span></a>
+                                <li><a><i class="fa fa-desktop"></i> Servicios <span
+                                            class="fa fa-chevron-down"></span></a>
                                     <ul class="nav child_menu">
                                         <li><a href="">Categoria de servicios</a></li>
                                         <li><a href="eventos">Eventos</a></li>
@@ -68,18 +72,20 @@
                                         <li><a href="">Profesionales Voluntarios</a></li>
                                     </ul>
                                 </li>
-                                <li><a><i class="fa fa-table"></i> Donaaciones <span class="fa fa-chevron-down"></span></a>
+                                <li><a><i class="fa fa-table"></i> Donaaciones <span
+                                            class="fa fa-chevron-down"></span></a>
                                     <ul class="nav child_menu">
                                         <li><a href="tables.html">Tables</a></li>
                                     </ul>
                                 </li>
-                                <li><a><i class="fa fa-bar-chart-o"></i> Ventas <span class="fa fa-chevron-down"></span></a>
+                                <li><a><i class="fa fa-bar-chart-o"></i> Ventas <span
+                                            class="fa fa-chevron-down"></span></a>
                                     <ul class="nav child_menu">
                                         <li><a href="chartjs.html">Chart JS</a></li>
 
                                     </ul>
                                 </li>
-                                
+
                             </ul>
                         </div>
 
@@ -91,31 +97,36 @@
             <div class="top_nav">
                 <div class="nav_menu">
                     <div class="nav toggle">
-                        <a id="menu_toggle"><i class="fa fa-bars"style="color:#f0cc2b;"></i></a>
+                        <a id="menu_toggle"><i class="fa fa-bars" style="color:#f0cc2b;"></i></a>
                     </div>
                     <nav class="nav navbar-nav">
                         <ul class=" navbar-right">
                             <li class="nav-item dropdown open" style="padding-left: 15px;">
-                                <a href="javascript:;" class="user-profile dropdown-toggle" aria-haspopup="true" id="navbarDropdown" data-toggle="dropdown" aria-expanded="false">
+                                <a href="javascript:;" class="user-profile dropdown-toggle" aria-haspopup="true"
+                                    id="navbarDropdown" data-toggle="dropdown" aria-expanded="false">
                                     <img src="images/img.jpg" alt="">{{nombre}}
                                 </a>
-                                <div class="dropdown-menu dropdown-usermenu pull-right" aria-labelledby="navbarDropdown">
+                                <div class="dropdown-menu dropdown-usermenu pull-right"
+                                    aria-labelledby="navbarDropdown">
                                     <a class="dropdown-item" href="javascript:;"> Profile</a>
                                     <a class="dropdown-item" href="javascript:;">
                                         <span class="badge bg-red pull-right">50%</span>
                                         <span>Settings</span>
                                     </a>
                                     <a class="dropdown-item" href="javascript:;">Help</a>
-                                    <a class="dropdown-item" href="login"><i class="fa fa-sign-out pull-right"></i> Cerrar sesión</a>
+                                    <a class="dropdown-item" href="login"><i class="fa fa-sign-out pull-right"></i>
+                                        Cerrar sesión</a>
                                 </div>
                             </li>
 
                             <li role="presentation" class="nav-item dropdown open">
-                                <a href="javascript:;" class="dropdown-toggle info-number" id="navbarDropdown1" data-toggle="dropdown" aria-expanded="false">
-                                    <i class="fa fa-envelope-o "style="color: #f0cc2b;" ></i>
+                                <a href="javascript:;" class="dropdown-toggle info-number" id="navbarDropdown1"
+                                    data-toggle="dropdown" aria-expanded="false">
+                                    <i class="fa fa-envelope-o " style="color: #f0cc2b;"></i>
                                     <span class="badge bg-green">6</span>
                                 </a>
-                                <ul class="dropdown-menu list-unstyled msg_list" role="menu" aria-labelledby="navbarDropdown1">
+                                <ul class="dropdown-menu list-unstyled msg_list" role="menu"
+                                    aria-labelledby="navbarDropdown1">
                                     <li class="nav-item">
                                         <a class="dropdown-item">
                                             <span class="image"><img src="images/img.jpg" alt="Profile Image" /></span>
@@ -124,7 +135,8 @@
                                                 <span class="time">3 mins ago</span>
                                             </span>
                                             <span class="message">
-                                                Film festivals used to be do-or-die moments for movie makers. They were where...
+                                                Film festivals used to be do-or-die moments for movie makers. They were
+                                                where...
                                             </span>
                                         </a>
                                     </li>
@@ -136,7 +148,8 @@
                                                 <span class="time">3 mins ago</span>
                                             </span>
                                             <span class="message">
-                                                Film festivals used to be do-or-die moments for movie makers. They were where...
+                                                Film festivals used to be do-or-die moments for movie makers. They were
+                                                where...
                                             </span>
                                         </a>
                                     </li>
@@ -148,7 +161,8 @@
                                                 <span class="time">3 mins ago</span>
                                             </span>
                                             <span class="message">
-                                                Film festivals used to be do-or-die moments for movie makers. They were where...
+                                                Film festivals used to be do-or-die moments for movie makers. They were
+                                                where...
                                             </span>
                                         </a>
                                     </li>
@@ -160,7 +174,8 @@
                                                 <span class="time">3 mins ago</span>
                                             </span>
                                             <span class="message">
-                                                Film festivals used to be do-or-die moments for movie makers. They were where...
+                                                Film festivals used to be do-or-die moments for movie makers. They were
+                                                where...
                                             </span>
                                         </a>
                                     </li>
@@ -182,398 +197,316 @@
 
             <!-- page content -->
             <div class="right_col" role="main">
-          <!-- top tiles -->
-          
-          <!-- /top tiles -->
+                <!-- top tiles -->
 
-          <div class="row">
-            <div class="col-md-12 col-sm-12 ">
-                <div class="formularios">
-                    <div class="bloque-formulario">
-                        <div class="page-title">
-                            <div class="title_right">
-                                <h1 class="titulo_formulario">Agregar un evento</h1>
-                        
+                <!-- /top tiles -->
+
+                <div class="row">
+                    <div class="col-md-12 col-sm-12 ">
+                        <div class="formularios">
+                            <div class="bloque-formulario">
+                                <div class="page-title">
+                                    <div class="title_right">
+                                        <h1 class="titulo_formulario">Agregar un evento</h1>
+
+                                    </div>
+                                    <button type="submit" id="boton_volver" class="boton_volver">Volver</button>
+                                </div>
+
+                                <div class="formulario">
+                                    <form action="" id="form_agregar_evento">
+                                        <div class="formulario_bloque-uno">
+                                            <div class="input-control">
+                                                <label for="text">Nombre evento</label>
+                                                <input type="text" name="" id="nombre_evento">
+                                                <div class="error"></div>
+                                            </div>
+
+                                            <div class="input-control">
+                                                <label for="text">Fecha/Hora Inicio</label>
+                                                <input type="datetime-local" name="" id="hora_i">
+                                                <div class="error"></div>
+                                            </div>
+
+                                            <div class="input-control">
+                                                <label for="text">Fecha/Hora fin</label>
+                                                <input type="datetime-local" name="" id="hora_f">
+                                                <div class="error"></div>
+                                            </div>
+
+                                            <div class="input-control">
+                                                <label for="text">Encargado fundación</label>
+                                                <input type="text" name="" id="encargado_f">
+                                                <div class="error"></div>
+                                            </div>
+
+                                            <div class="input-control">
+                                                <label for="text">Telefono encargado empresa</label>
+                                                <input type="text" name="" id="telefono_e">
+                                                <div class="error"></div>
+                                            </div>
+
+
+                                            <div class="input-control">
+                                                <label for="text">Número participantes</label>
+                                                <input type="text" name="" id="numero_p">
+                                                <div class="error"></div>
+                                            </div>
+                                        </div>
+
+                                        <div class="formulario_bloque-dos">
+
+                                            <div class="input-control">
+                                                <label for="select">Estado</label>
+                                                <select name="" id="estado_evento">
+                                                    <option value="seleccionar">seleccionar</option>
+                                                    <option value="Finalizado">Finalizado</option>
+                                                    <option value="Aplazado">Aplazado</option>
+                                                    <option value="Cancelado">Cancelado</option>
+                                                    <option value="En ejecución">En ejecución</option>
+                                                    <option value="A ejecutar">A ejecutar</option>
+                                                </select>
+                                                <div class="error"></div>
+                                            </div>
+
+                                            <div class="input-control">
+                                                <label for="text">Nombre empresa</label>
+                                                <input type="text" name="" id="nombre_empresa">
+                                                <div class="error"></div>
+                                            </div>
+
+                                            <div class="input-control">
+                                                <label for="text">NIT empresa</label>
+                                                <input type="text" name="" id="nit">
+                                                <div class="error"></div>
+                                            </div>
+
+                                            <div class="input-control">
+                                                <label for="text">Encargado empresa</label>
+                                                <input type="text" name="" id="encargado_e">
+                                                <div class="error"></div>
+                                            </div>
+
+                                            <div class="input-control">
+                                                <label for="text">Lugar realizacion</label>
+                                                <input type="text" name="" id="lugar">
+                                                <div class="error"></div>
+                                            </div>
+
+                                        </div>
+                                        <button type="submit" class="boton" name="" id="boton">Agregar evento</button>
+                                    </form>
+                                </div>
                             </div>
-                            <button type="submit" id="boton_volver" class="boton_volver">Volver</button>
-                        </div>
 
-                        <div class="formulario">
-                            <form action="" id="form_agregar_evento">
-                                <div class="formulario_bloque-uno">
-                                    <div class="input-control">
-                                        <label for="text">Nombre evento</label>
-                                        <input type="text" name="" id="nombre_evento">
-                                        <div class="error"></div>
-                                    </div>
+                            <div class="bloque-formulario">
+                                <div class="page-title">
+                                    <div class="title_right">
+                                        <h1 class="titulo_formulario">Agregar un tipo de participante</h1>
 
-                                    <div class="input-control">
-                                        <label for="text">Fecha/Hora Inicio</label>
-                                        <input type="datetime-local" name="" id="hora_i">
-                                        <div class="error"></div>
-                                    </div>
-
-                                    <div class="input-control">
-                                        <label for="text">Fecha/Hora fin</label>
-                                        <input type="datetime-local" name="" id="hora_f">
-                                        <div class="error"></div>
-                                    </div>
-
-                                    <div class="input-control">
-                                        <label for="text">Encargado fundación</label>
-                                        <input type="text" name="" id="encargado_f">
-                                        <div class="error"></div>
-                                    </div>
-
-                                     <div class="input-control">
-                                        <label for="text">Telefono encargado empresa</label>
-                                        <input type="text" name="" id="telefono_e">
-                                        <div class="error"></div>
-                                    </div>
-
-
-                                    <div class="input-control">
-                                        <label for="text">Número participantes</label>
-                                        <input type="text" name="" id="numero_p">
-                                        <div class="error"></div>
                                     </div>
                                 </div>
-                    
-                                <div class="formulario_bloque-dos">
 
-                                    <div class="input-control">
-                                        <label for="select">Estado</label>
-                                        <select name="" id="estado_evento">
-                                            <option value="seleccionar">seleccionar</option>
-                                            <option value="Finalizado">Finalizado</option>
-                                            <option value="Aplazado">Aplazado</option>
-                                            <option value="Cancelado">Cancelado</option>
-                                            <option value="En ejecución">En ejecución</option>
-                                            <option value="A ejecutar">A ejecutar</option>
-                                        </select>
-                                        <div class="error"></div>
-                                    </div>
+                                <div class="formulario">
+                                    <form action="" id="form_tipo_participante">
+                                        <div class="formulario_bloque-uno">
+                                            <div class="input-control">
+                                                <label for="select">Tipo participante</label>
+                                                <select name="" id="tipo_part">
+                                                    <option value="seleccionar">seleccionar</option>
+                                                    <option value="Beneficiario">Beneficiario</option>
+                                                    <option value="Profesional">Profesional voluntario</option>
+                                                    <option value="Acudiente">Acudiente</option>
+                                                    <option value="Administrador">Administrador</option>
+                                                    <option value="Diriector_a">Dir. Administrativo</option>
+                                                </select>
+                                                <div class="error"></div>
+                                            </div>
 
-                                    <div class="input-control">
-                                        <label for="text">Nombre empresa</label>
-                                        <input type="text" name="" id="nombre_empresa">
-                                        <div class="error"></div>
-                                    </div>
+                                            <div class="input-control">
+                                                <label for="text">Genero biologico</label>
+                                                <select name="" id="genero_b">
+                                                    <option value="seleccionar">seleccionar</option>
+                                                    <option value="Masculino">Masculino</option>
+                                                    <option value="Femenino">Femenino</option>
+                                                    <option value="Otro">Otro</option>
+                                                </select>
+                                                <div class="error"></div>
+                                            </div>
 
-                                    <div class="input-control">
-                                        <label for="text">NIT empresa</label>
-                                        <input type="text" name="" id="nit">
-                                        <div class="error"></div>
-                                    </div>
-                                    
-                                    <div class="input-control">
-                                        <label for="text">Encargado empresa</label>
-                                        <input type="text" name="" id="encargado_e">
-                                        <div class="error"></div>
-                                    </div>
+                                            <div class="input-control">
+                                                <label for="text">Numero de invitados por tipo participante </label>
+                                                <input type="text" name="" id="nro_invitados_p">
+                                                <div class="error"></div>
+                                            </div>
 
-                                    <div class="input-control">
-                                        <label for="text">Lugar realizacion</label>
-                                        <input type="text" name="" id="lugar">
-                                        <div class="error"></div>
-                                    </div>
-                                    
+                                        </div>
+                                        <div class="formulario_bloque-dos">
+                                            <div class="input-control">
+                                                <label for="text">Edad mínima participante</label>
+                                                <input type="text" name="" id="edad_min">
+                                                <div class="error"></div>
+                                            </div>
+
+                                            <div class="input-control">
+                                                <label for="text">Edad máxima participante</label>
+                                                <input type="text" name="" id="edad_max">
+                                                <div class="error"></div>
+                                            </div>
+
+                                        </div>
+                                        <button type="submit" class="boton" name="" id="boton">Agregar tipo
+                                            participante</button>
+
+                                    </form>
                                 </div>
-                                <button type="submit" class="boton" name="" id="boton">Agregar evento</button>
-                            </form>
-                        </div>
-                    </div>
 
-                    <div class="bloque-formulario">
-                        <div class="page-title">
-                            <div class="title_right">
-                                <h1 class="titulo_formulario">Agregar un tipo de participante</h1>
-                       
+                                <div class="bloque-tabla">
+                                    <section class="search_icon">
+
+                                        <div class="titulo_s">
+                                            <h4>Lista tipo de participantes</h4>
+
+                                        </div>
+
+                                    </section>
+
+
+                                    <main>
+                                        <div class="tabla">
+                                            <table id="tblPart" class="table table-striped">
+                                                <thead>
+                                                    <tr>
+                                                        <th scope="col">ID</th>
+                                                        <th scope="col">Tipo participante</th>
+                                                        <th scope="col">Edad minima</th>
+                                                        <th scope="col">Edad maxima</th>
+                                                        <th scope="col">genero biologico</th>
+                                                        <th scope="col">Nro invitados por tipo</th>
+                                                        <th scope="col" class="th_center">Opciones</th>
+
+
+                                                    </tr>
+                                                </thead>
+                                                <tbody>
+                                                    
+                                                </tbody>
+                                            </table>
+                                            <div class="pagination" id="pagination_part">
+                                                <button class="btn btn-info" id="prevPage_part">Anterior</button>
+                                                <span id="currentPage_part">
+                                                    <h6>1</h6>
+                                                </span>
+                                                <button class="btn btn-info" id="nextPage_part">Siguiente</button>
+                                            </div>
+
+                                        </div>
+
+                                    </main>
+                                </div>
                             </div>
-                        </div>
 
-                        <div class="formulario">
-                            <form action="" id="form_tipo_participante">
-                                <div class="formulario_bloque-uno">
-                                    <div class="input-control">
-                                      <label for="select">Tipo participante</label>
-                                        <select name="" id="tipo_part">
-                                            <option value="seleccionar">seleccionar</option>
-                                            <option value="Beneficiario">Beneficiario</option>
-                                            <option value="Profesional">Profesional voluntario</option>
-                                            <option value="Acudiente">Acudiente</option>
-                                            <option value="Administrador">Administrador</option>
-                                            <option value="Diriector_a">Dir. Administrativo</option>
-                                        </select>
-                                        <div class="error"></div>
+
+                            <div class="bloque-formulario">
+                                <div class="page-title">
+                                    <div class="title_right">
+                                        <h1 class="titulo_formulario">Agregar un vehículo contratado</h1>
+
                                     </div>
-
-                                    <div class="input-control">
-                                        <label for="text">Genero biologico</label>
-                                        <select name="" id="genero_b">
-                                            <option value="seleccionar">seleccionar</option>
-                                            <option value="Masculino">Masculino</option>
-                                            <option value="Femenino">Femenino</option>
-                                            <option value="Otro">Otro</option>
-                                        </select>
-                                        <div class="error"></div>
-                                    </div>
-                                    
-                                    <div class="input-control">
-                                        <label for="text">Numero de invitados por tipo participante </label>
-                                        <input type="text" name="" id="nro_invitados_p">
-                                        <div class="error"></div>
-                                    </div>
-                                    
-                                </div>
-                                <div class="formulario_bloque-dos">
-                                    <div class="input-control">
-                                        <label for="text">Edad mínima participante</label>
-                                        <input type="text" name="" id="edad_min">
-                                        <div class="error"></div>
-                                    </div>
-
-                                    <div class="input-control">
-                                        <label for="text">Edad máxima participante</label>
-                                        <input type="text" name="" id="edad_max">
-                                        <div class="error"></div>
-                                    </div>
-                                    
-                                </div>
-                                <button type="submit" class="boton" name="" id="boton">Agregar tipo participante</button>
-
-                            </form>
-                        </div>
-
-                        <div class="bloque-tabla">
-                            <section class="search_icon">
-
-                                <div class="titulo_s">
-                                    <h4>Lista tipo de participantes</h4>
-                                
                                 </div>
 
-                            </section>
-
-
-                            <main>
-                                <div class="tabla">
-                                        <table id="tblData" class="table table-striped">
-                                            <thead>
-                                            <tr>
-                                                <th scope="col">ID</th>
-                                                <th scope="col">Tipo participante</th>
-                                                <th scope="col">Edad minima</th>
-                                                <th scope="col">Edad maxima</th>
-                                                <th scope="col">genero biologico</th>
-                                                <th scope="col">Nro invitados por tipo</th>
-                                                <th scope="col" class="th_center">Opciones</th>
-
-
-                                            </tr>
-                                            </thead>
-                                            <tbody>
-                                            <tr>
-                                                <td>1</td>
-                                                <td>Beneficiario</td>
-                                                <td>0</td>
-                                                <td>25</td>
-                                                <td>Masculino</td>
-                                                <td>20</td>
-                                                <td class="Opciones">
-
-                                            <div>
-                                            <a href="editar_tipo_participante"><img src="../images/editar.png" alt="icon" class="opc_edit"></a>
+                                <div class="formulario">
+                                    <form action="" id="form_vehiculos">
+                                        <div class="formulario_bloque-uno">
+                                            <div class="input-control">
+                                                <label for="select">Tipo vehículo</label>
+                                                <select name="" id="tipo_ve">
+                                                    <option value="seleccionar">seleccionar</option>
+                                                    <option value="Bus">Bus</option>
+                                                    <option value="Carro">Carro</option>
+                                                    <option value="Furgoneta">Furgoneta</option>
+                                                </select>
+                                                <div class="error"></div>
                                             </div>
-                                            <div>
-                                            <img src="../images/borrar.png" alt="icon" class="opc_delete" onclick="mostrarAlerta()">
+
+                                            <div class="input-control">
+                                                <label for="text">Placa del vehículo</label>
+                                                <input type="text" name="" id="placa_ve">
+                                                <div class="error"></div>
                                             </div>
-                                        </td>
 
-
-                                            </tr>
-                                            <tr>
-                                                <td>2</td>
-                                                <td>Acudiente</td>
-                                                <td>2</td>
-                                                <td>6</td>
-                                                <td>15</td>
-                                                <td>3</td>
-                                                <td class="Opciones">
-    
-                                            <div>
-                                            <a href="editar_tipo_participante"><img src="../images/editar.png" alt="icon" class="opc_edit"></a>
+                                            <div class="input-control">
+                                                <label for="text">Puestos del vehículo</label>
+                                                <input type="text" name="" id="puestos_ve">
+                                                <div class="error"></div>
                                             </div>
-                                            <div>
-                                            <img src="../images/borrar.png" alt="icon" class="opc_delete" onclick="mostrarAlerta()">
+                                            <button type="submit" class="boton" name="" id="boton">Agregar vehículo
+                                                contratado</button>
+                                        </div>
+
+                                    </form>
+                                </div>
+
+                                <div class="bloque-tabla">
+                                    <section class="search_icon">
+
+                                        <div class="titulo_s">
+                                            <h4>Lista vehículos contratados</h4>
+
+                                        </div>
+
+                                    </section>
+
+
+                                    <main>
+                                        <div class="tabla">
+                                            <table id="tblVeh" class="table table-striped">
+                                                <thead>
+                                                    <tr>
+                                                        <th scope="col">ID</th>
+                                                        <th scope="col">Tipo vehículo</th>
+                                                        <th scope="col">Puestos</th>
+                                                        <th scope="col">Placa vehículo</th>
+                                                        <th scope="col" class="th_center">Opciones</th>
+
+
+                                                    </tr>
+                                                </thead>
+                                                <tbody>
+                                                    
+                                                </tbody>
+                                            </table>
+                                            <div class="pagination" id="pagination_ve">
+                                                <button class="btn btn-info" id="prevPage_ve">Anterior</button>
+                                                <span id="currentPage_ve">
+                                                    <h6>1</h6>
+                                                </span>
+                                                <button class="btn btn-info" id="nextPage_ve">Siguiente</button>
                                             </div>
-                                        </td>
 
-
-                                            </tr>
-                                            <tr>
-                                                <td>3</td>
-                                                <td>Administrativo</td>
-                                                <td></td>
-                                                <td>18</td>
-                                                <td>32</td>
-                                                <td>5</td>
-                                                <td class="Opciones">
-
-                                            <div>
-                                            <a href="editar_tipo_participante"><img src="../images/editar.png" alt="icon" class="opc_edit"></a>
-                                            </div>
-                                            <div>
-                                            <img src="../images/borrar.png" alt="icon" class="opc_delete" onclick="mostrarAlerta()">
-                                            </div>
-                                        </td>
-                                            </tbody>
-                                        </table>
-                                    </div>
-                            
-                            </main>
-                        </div>
-                    </div>
-
-    
-                    <div class="bloque-formulario">
-                        <div class="page-title">
-                            <div class="title_right">
-                                <h1 class="titulo_formulario">Agregar un vehículo contratado</h1>
-                       
+                                        </div>
+                                    </main>
+                                </div>
                             </div>
+
+
                         </div>
 
-                        <div class="formulario">
-                            <form action="" id="form_vehiculos">
-                                <div class="formulario_bloque-uno">
-                                    <div class="input-control">
-                                      <label for="select">Tipo vehículo</label>
-                                        <select name="" id="tipo_ve">
-                                            <option value="seleccionar">seleccionar</option>
-                                            <option value="Bus">Bus</option>
-                                            <option value="Carro">Carro</option>
-                                            <option value="Furgoneta">Furgoneta</option>
-                                        </select>
-                                        <div class="error"></div>
-                                    </div>
+                        <div class="clearfix"></div>
 
-                                    <div class="input-control">
-                                        <label for="text">Placa del vehículo</label>
-                                        <input type="text" name="" id="placa_ve">
-                                        <div class="error"></div>
-                                    </div>
-                                    
-                                    <div class="input-control">
-                                        <label for="text">Puestos del vehículo</label>
-                                        <input type="text" name="" id="puestos_ve">
-                                        <div class="error"></div>
-                                    </div>
-                                    <button type="submit" class="boton" name="" id="boton">Agregar vehículo contratado</button>
-                                </div>
-
-                            </form>
-                        </div>
-
-                        <div class="bloque-tabla">
-                            <section class="search_icon">
-
-                                <div class="titulo_s">
-                                    <h4>Lista vehículos contratados</h4>
-                                
-                                </div>
-
-                            </section>
-
-
-                            <main>
-                                <div class="tabla">
-                                        <table id="tblData" class="table table-striped">
-                                            <thead>
-                                            <tr>
-                                                <th scope="col">ID</th>
-                                                <th scope="col">Tipo vehículo</th>
-                                                <th scope="col">Puestos</th>
-                                                <th scope="col">Placa vehículo</th>
-                                                <th scope="col" class="th_center">Opciones</th>
-
-
-                                            </tr>
-                                            </thead>
-                                            <tbody>
-                                            <tr>
-                                                <td>1</td>
-                                                <td>Bus</td>
-                                                <td>20</td>
-                                                <td>AAS 320</td>
-                                                <td class="Opciones">
-
-                                            <div>
-                                            <a href="editar_vehiculo"><img src="../images/editar.png" alt="icon" class="opc_edit"></a>
-                                            </div>
-                                            <div>
-                                            <img src="../images/borrar.png" alt="icon" class="opc_delete" onclick="mostrarAlerta()">
-                                            </div>
-                                        </td>
-
-
-                                            </tr>
-                                            <tr>
-                                                <td>2</td>
-                                                <td>Carro</td>
-                                                <td>4</td>
-                                                <td>FCV 320</td>
-                                                <td class="Opciones">
-    
-                                            <div>
-                                            <a href="editar_vehiculo"><img src="../images/editar.png" alt="icon" class="opc_edit"></a>
-                                            </div>
-                                            <div>
-                                            <img src="../images/borrar.png" alt="icon" class="opc_delete" onclick="mostrarAlerta()">
-                                            </div>
-                                        </td>
-
-
-                                            </tr>
-                                            <tr>
-                                                <td>3</td>
-                                                <td>Furgoneta</td>
-                                                <td>20</td>
-                                                <td>JCV 829</td>
-                                                <td class="Opciones">
-
-                                            <div>
-                                            <a href="editar_vehiculo"><img src="../images/editar.png" alt="icon" class="opc_edit"></a>
-                                            </div>
-                                            <div>
-                                            <img src="../images/borrar.png" alt="icon" class="opc_delete" onclick="mostrarAlerta()">
-                                            </div>
-                                        </td>
-                                            </tbody>
-                                        </table>
-                                    </div>
-                            </main>
-                        </div>
                     </div>
-                        
 
                 </div>
+                <br />
 
-                <div class="clearfix"></div>
-              
+
             </div>
+            {{>footer}}
 
-          </div>
-          <br />
+        </div>
+    </div>
 
-          
-        </div>
-           {{>footer}}
-            
-        </div>
-    </div> 
-   
-   
+
 
 </body>
 
