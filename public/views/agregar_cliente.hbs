@@ -212,7 +212,7 @@
             <div class="right_col" role="main">
                 <div class="row">
                     <div class="col-md-12 col-sm-12">
-                        <div class="">
+                        <div class="bloque-formulario">
                             <div class="formulario">
                                 <h1 class="titulo_formulario">Agregar Cliente</h1>
                                 <form action="" id="form">
@@ -221,6 +221,12 @@
                                         <div class="input-control">
                                             <label for="text">Nombre Cliente</label>
                                             <input type="text" name="" id="nombre_cliente">
+                                            <div class="error"></div>
+                                        </div>
+                                        
+                                          <div class="input-control">
+                                            <label for="text">Apellido Cliente</label>
+                                            <input type="text" name="" id="apellido_cliente">
                                             <div class="error"></div>
                                         </div>
 
@@ -237,11 +243,7 @@
                                             <div class="error"></div>
                                         </div>
 
-                                        <div class="input-control">
-                                            <label for="text">Telefono</label>
-                                            <input type="text" name="" id="telefono_cliente">
-                                            <div class="error"></div>
-                                        </div>
+                                       
 
 
                                     </div>
@@ -249,22 +251,33 @@
                                     <div class="formulario_bloque-dos">
 
                                         <div class="input-control">
+                                            <label for="text">Telefono</label>
+                                            <input type="text" name="" id="telefono_cliente">
+                                            <div class="error"></div>
+                                        </div>
+
+                                        <div class="input-control">
                                             <label for="select">Pais</label>
                                             <select name="" id="select_pais">
                                                 <option value="seleccionar">seleccionar</option>
-                                                <option value="1">1</option>
+                                                <option value="colombia">Colombia</option>
+                                                <option value="ecuador">Ecuador</option>
+                                                <option value="argentina">Argentina</option>
+                                                <option value="chile">Chile</option>
+                                                <option value="brasil">Brasil</option>
                                             </select>
                                             <div class="error"></div>
                                         </div>
 
                                         <div class="input-control">
                                             <label for="select">Departamento</label>
-                                            <select name="" id="select_departamento">
-                                                <option value="seleccionar">seleccionar</option>
-                                                <option value="1">1</option>
+                                            <select name="" id="select_departamento" disabled>
+                                                <option value="seleccionar">seleccionar</option>    
                                             </select>
                                             <div class="error"></div>
                                         </div>
+
+                                         
 
                                         <div class="input-control">
                                             <label for="text">direccion</label>
@@ -277,7 +290,7 @@
 
 
                                     </div>
-                                    <button type="submit" class="boton" name="" id="boton">evniar</button>
+                                    <button type="submit" class="boton" name="" id="boton">Agregar Cliente</button>
                                 </form>
                             </div>
 
@@ -299,7 +312,7 @@
     </div>
     </div>
     </div>
-    {{>footer}}
+    {{>footer_validacion_clientes}}
 
     </div>
     </div>

@@ -211,20 +211,27 @@
             <!-- page content -->
             <div class="right_col" role="main">
                 <div class="row">
-                    <div class="col-md-12 col-sm-12">
-                        <div class="">
-                            <div class="formulario">
-                                <h1 class="titulo_formulario">agregar Venta</h1>
+                    <div class="col-md-12 col-sm-12" >
+                        <div class="bloque-formulario-ventas-add">
+                            <div class="form_venta">
+                                <h1 class="titulo_formulario">Agregar Venta</h1>
                                 <form action="" id="form_agregar_venta">
                                     <div class="formulario_bloque-uno">
 
                                         <div class="input-control">
                                             <label for="text">Nombre Cliente</label>
-                                            <input type="text" name="" id="nombre_cliente">
+                                            <input type="text" name="" id="nombre_venta">
                                             <div class="error"></div>
                                         </div>
 
                                     
+                                            <div class="input-control">
+                                                <label for="datetime">Apellido</label>
+                                                <input type="text" name="" id="apellido_venta">
+                                                <div class="error"></div>
+                                            </div>
+
+                                            
                                             <div class="input-control">
                                                 <label for="datetime">Fecha de venta</label>
                                                 <input type="datetime-local" name="" id="fecha_venta">
@@ -233,15 +240,18 @@
 
                                             <div class="input-control">
                                                 <label for="text">Precio total de la venta</label>
-                                                <input type="text" name="" id="telefono_cliente">
+                                                <input type="text" name="" id="precio_total_venta">
                                                 <div class="error"></div>
                                             </div>
 
-                                              <button type="submit" class="boton" name="" id="boton">evniar</button>
+                                              <button type="submit" class="boton" name="" id="boton">Agregar Venta</button>
 
                                         </div>
                                       
                                 </form>
+                            </div>
+                            <div class="bloque">
+
                             </div>
 
                         </div>
@@ -262,7 +272,7 @@
     </div>
     </div>
     </div>
-    {{>footer}}
+    {{>footer_validacion_ventas}}
 
     </div>
     </div>

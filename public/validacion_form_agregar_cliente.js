@@ -1,11 +1,12 @@
 const formulario_add_cliente = document.getElementById('form')
 const nombre_add_cliente = document.getElementById('nombre_cliente')
+const apellidio_add_cliente=document.getElementById('apellido_cliente')
 const telefono_add_cliente = document.getElementById('telefono_cliente')
 const email_add_cliente = document.getElementById('email_cliente')
 const password_add_cliente = document.getElementById('password_cliente')
 const direccion_add_cliente = document.getElementById('direccion_cliente')
 const pais_add_cliente = document.getElementById('select_pais')
-const departamento_add_cliente = document.getElementById('select_departamento')
+
 
 
 
@@ -106,7 +107,6 @@ const validateInputs = () => {
     const emailValue = email_add_cliente.value.trim()
     const passValue = password_add_cliente.value.trim()
     const paisValue = pais_add_cliente.value.trim()
-    const departamentoValue = departamento_add_cliente.value.trim()
     const nombreValue = nombre_add_cliente.value.trim()
     const telefonoValue = telefono_add_cliente.value.trim()
 
@@ -166,117 +166,20 @@ const validateInputs = () => {
 
     if (paisValue === "seleccionar") {
         setError(pais_add_cliente, 'Debes de seleccionar una opción valida')
+        setError(departamento_add_cliente, 'debe de seleccionar un pais primero')
     } else {
         setSuccess(pais_add_cliente)
-    }
-
-    if (departamentoValue === "seleccionar") {
-        setError(departamento_add_cliente, 'Debes de seleccionar una opción valida')
-    } else {
         setSuccess(departamento_add_cliente)
     }
+
+
 
 
 }
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+if (nombre_add_cliente && password_add_cliente && email_add_cliente && telefono_add_cliente && pais_add_cliente && departamento_add_cliente && direccion_add_cliente ) {
+    
 function mostrarAlertaSucces() {
     Swal.fire({
         position: "center",
@@ -286,3 +189,5 @@ function mostrarAlertaSucces() {
         timer: 1500
     });
 }  
+
+}
