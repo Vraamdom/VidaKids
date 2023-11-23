@@ -8,7 +8,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <title>Vidakids | Agregar participante</title>
+    <title>Vidakids |Home</title>
     {{>header}}
 
 </head>
@@ -203,140 +203,71 @@
 
                 <div class="row">
                     <div class="col-md-12 col-sm-12 ">
-                        <form action="" class="formulario" id="formulario">
-
-
-                            <div class="columnas">
-                                <div class="columna">
-                                    <!-- Grupo: beneficiario -->
-                                    <div class="formulario__grupo" id="grupo__nombre_c">
-                                        <label for="nombre_c" class="formulario__label">Nombre completo</label>
-                                        <div class="formulario__grupo-input">
-                                            <input type="text" class="formulario__input" name="nombre_c" id="nombre_c"
-                                                placeholder="">
-                                            <i class="formulario__validacion-estado fas fa-times-circle"></i>
-                                        </div>
-                                        <p class="formulario__input-error">El campo no puede contener numeros</p>
-                                    </div>
-
-
-                                    <!-- Grupo: edad -->
-                                    <div class="formulario__grupo" id="grupo__edad">
-                                        <label for="edad" class="formulario__label">Edad</label>
-                                        <div class="formulario__grupo-input">
-                                            <input type="text" class="formulario__input" name="edad" id="edad"
-                                                placeholder="">
-                                            <i class="formulario__validacion-estado fas fa-times-circle"></i>
-                                        </div>
-                                        <p class="formulario__input-error">El campo no puede contener letras.</p>
-                                    </div>
-
-
-                                    <!-- Grupo: placa_vehiculo_p -->
-                                    <div class="formulario__grupo" id="grupo__placa_vehiculo_p">
-                                        <label for="placa_vehiculo_p" class="formulario__label">Placa vehiculo
-                                            personal</label>
-                                        <div class="formulario__grupo-input">
-                                            <input type="text" class="formulario__input" name="placa_vehiculo_p"
-                                                id="placa_vehiculo_p" placeholder="">
-                                            <i class="formulario__validacion-estado fas fa-times-circle"></i>
-                                        </div>
-                                        <p class="formulario__input-error">El campo targeta de identidad no puede
-                                            contener
-                                            letras.
-                                        </p>
-                                    </div>
-
-
-                                    <!-- Grupo: nro_documento -->
-                                    <div class="formulario__grupo" id="grupo__nro_documento">
-                                        <label for="nro_documento" class="formulario__label">Numero documento</label>
-                                        <div class="formulario__grupo-input">
-                                            <input type="text" class="formulario__input" name="nro_documento"
-                                                id="nro_documento" placeholder="">
-                                            <i class="formulario__validacion-estado fas fa-times-circle"></i>
-                                        </div>
-                                        <p class="formulario__input-error">El campo no puede contener numeros.</p>
-                                    </div>
+                        <div class="formularios">
+                            <div class="bloque-tabla">
+                                <div class="titulo_p">
+                                    <h1>Participantes del evento</h1>
                                 </div>
+                                <section class="search_icon">
+
+                                    <div class="titulo_s">
+                                        <a href="agregar_participante">
+                                            <img src="../images/boton-mas.png" alt="icon" class="icon_add"id="btn-abrir-modal">
+                                        </a>
+                                        <h4>Agregar participante</h4>
+                                    </div>
+                                    <form class="form-inline my-2 my-lg-0">
+                                        <div>
+                                            <input class="form-control mr-sm-2" type="search" placeholder="Search"
+                                                aria-label="Search">
+                                        </div>
+                                        <div class="btn-search">
+                                            <button class="btn btn-outline-warning my-2 my-sm-0" type="submit"><img
+                                                src="../images/bx-search-alt.svg" alt=""></button>
+                                        </div>
+
+                                </section>
 
 
-                                <div class="columna">
-                                    <!-- Grupo: genero_b_p -->
-                                    <div class="formulario__grupo" id="grupo__genero_b_p">
-                                        <label for="genero_b_p" class="formulario__label">Genero biologico</label>
-                                        <div class="formulario__grupo-input">
-                                            <select id="genero_b_p" name="genero_b_p">
-                                                <option value="seleccionar">seleccionar</option>
-                                                <option value="Masculino">Masculino</option>
-                                                <option value="Femenino">Femenino</option>
-                                                <option value="Otro">Otro</option>
+                                <main>
+                                    <div class="tabla">
+                                        <table id="tblP" class="table table-striped">
+                                            <thead>
+                                                <tr>
+                                                    <th scope="col">ID</th>
+                                                    <th scope="col">Tipo participante</th>
+                                                    <th scope="col">Nombre completo</th>
+                                                    <th scope="col">Edad</th>
+                                                    <th scope="col">Genero biologico</th>
+                                                    <th scope="col">Placa vehículo</th>
+                                                    <th scope="col">Tipo documento</th>
+                                                    <th scope="col">Documento</th>
+                                                    <th scope="col">Asistencia</th>
+                                                    <th scope="col" class="th_center">Opciones</th>
 
 
-                                            </select>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+
+
+                                            </tbody>
+                                        </table>
+                                        <div class="pagination" id="pagination_p">
+                                            <button class="btn btn-info" id="prevPage_p">Anterior</button>
+                                            <span id="currentPage_p">
+                                                <h6>1</h6>
+                                            </span>
+                                            <button class="btn btn-info" id="nextPage_p">Siguiente</button>
                                         </div>
                                     </div>
-
-                                    <!-- Grupo: tipo_part -->
-                                    <div class="formulario__grupo" id="grupo__tipo_part">
-                                        <label for="tipo_part" class="formulario__label">Tipo participante</label>
-                                        <div class="formulario__grupo-input">
-                                            <select id="tipo_part" name="tipo_part">
-                                                <option value="seleccionar">seleccionar</option>
-                                                <option value="Beneficiario">Beneficiario</option>
-                                                <option value="Profesional">Profesional voluntario</option>
-                                                <option value="Acudiente">Acudiente</option>
-                                                <option value="Administrador">Administrador</option>
-                                                <option value="Diriector_a">Dir. Administrativo</option>
-                                            </select>
-                                        </div>
+                                    <div class="dow_excel">
+                                        <button onclick="exportTableToExcel('tblP')" class="btn btn-success">Exportar
+                                            datos a Excel <img src="../img/bxs-download.svg" alt=""></button>
                                     </div>
-
-                                    <!-- Grupo: tipo_do -->
-                                    <div class="formulario__grupo" id="grupo__tipo_do">
-                                        <label for="tipo_do" class="formulario__label">Tipo documento</label>
-                                        <div class="formulario__grupo-input">
-                                            <select id="tipo_do" name="tipo_do">
-                                                <option value="seleccionar">seleccionar</option>
-                                                <option value="C.C">C.C</option>
-                                                <option value="C.E">C.E</option>
-                                                <option value="T.I">T.I</option>
-                                            </select>
-                                        </div>
-                                    </div>
-
-                                    <!-- Grupo: asistencia -->
-                                    <div class="formulario__grupo" id="grupo__asistencia">
-                                        <label for="eps" class="formulario__label">Asistencia</label>
-                                        <div class="formulario__grupo-input">
-                                            <select id="asistencia" name="asistencia">
-                                                <option value="seleccionar">seleccionar</option>
-                                                <option value="Asiste">Asiste</option>
-                                                <option value="No asiste">No asiste</option>
-                                            </select>
-                                        </div>
-                                    </div>
-
-
-
-                                </div>
-
-
+                                </main>
                             </div>
-
-                            <div class="formulario__mensaje" id="formulario__mensaje">
-                                <p><i class="fas fa-exclamation-triangle"></i> <b>Error:</b> Por favor rellena el
-                                    formulario
-                                    correctamente. </p>
-                            </div>
-
-
-                            <div class="formulario__grupo formulario__grupo-btn-enviar">
-                                <button type="submit" class="formulario__btn">Enviar</button>
-                                <p class="formulario__mensaje-exito" id="formulario__mensaje-exito">Formulario enviado
-                                    exitosamente!</p>
-                            </div>
-                        </form>
+                        </div>
 
                         <div class="clearfix"></div>
 

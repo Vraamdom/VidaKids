@@ -19,7 +19,7 @@ function mostrarAlerta() {
     }
 
 
-    function exportTableToExcel(tableID, filename = '') {
+function exportTableToExcel(tableID, filename = '') {
         var downloadLink;
         var dataType = 'application/vnd.ms-excel';
         var tableSelect = document.getElementById(tableID);

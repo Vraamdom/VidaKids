@@ -8,7 +8,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <title>Vidakids | Agregar participante</title>
+    <title>Vidakids | Agregar tipo de participantes</title>
     {{>header}}
 
 </head>
@@ -208,77 +208,8 @@
 
                             <div class="columnas">
                                 <div class="columna">
-                                    <!-- Grupo: beneficiario -->
-                                    <div class="formulario__grupo" id="grupo__nombre_c">
-                                        <label for="nombre_c" class="formulario__label">Nombre completo</label>
-                                        <div class="formulario__grupo-input">
-                                            <input type="text" class="formulario__input" name="nombre_c" id="nombre_c"
-                                                placeholder="">
-                                            <i class="formulario__validacion-estado fas fa-times-circle"></i>
-                                        </div>
-                                        <p class="formulario__input-error">El campo no puede contener numeros</p>
-                                    </div>
-
-
-                                    <!-- Grupo: edad -->
-                                    <div class="formulario__grupo" id="grupo__edad">
-                                        <label for="edad" class="formulario__label">Edad</label>
-                                        <div class="formulario__grupo-input">
-                                            <input type="text" class="formulario__input" name="edad" id="edad"
-                                                placeholder="">
-                                            <i class="formulario__validacion-estado fas fa-times-circle"></i>
-                                        </div>
-                                        <p class="formulario__input-error">El campo no puede contener letras.</p>
-                                    </div>
-
-
-                                    <!-- Grupo: placa_vehiculo_p -->
-                                    <div class="formulario__grupo" id="grupo__placa_vehiculo_p">
-                                        <label for="placa_vehiculo_p" class="formulario__label">Placa vehiculo
-                                            personal</label>
-                                        <div class="formulario__grupo-input">
-                                            <input type="text" class="formulario__input" name="placa_vehiculo_p"
-                                                id="placa_vehiculo_p" placeholder="">
-                                            <i class="formulario__validacion-estado fas fa-times-circle"></i>
-                                        </div>
-                                        <p class="formulario__input-error">El campo targeta de identidad no puede
-                                            contener
-                                            letras.
-                                        </p>
-                                    </div>
-
-
-                                    <!-- Grupo: nro_documento -->
-                                    <div class="formulario__grupo" id="grupo__nro_documento">
-                                        <label for="nro_documento" class="formulario__label">Numero documento</label>
-                                        <div class="formulario__grupo-input">
-                                            <input type="text" class="formulario__input" name="nro_documento"
-                                                id="nro_documento" placeholder="">
-                                            <i class="formulario__validacion-estado fas fa-times-circle"></i>
-                                        </div>
-                                        <p class="formulario__input-error">El campo no puede contener numeros.</p>
-                                    </div>
-                                </div>
-
-
-                                <div class="columna">
-                                    <!-- Grupo: genero_b_p -->
-                                    <div class="formulario__grupo" id="grupo__genero_b_p">
-                                        <label for="genero_b_p" class="formulario__label">Genero biologico</label>
-                                        <div class="formulario__grupo-input">
-                                            <select id="genero_b_p" name="genero_b_p">
-                                                <option value="seleccionar">seleccionar</option>
-                                                <option value="Masculino">Masculino</option>
-                                                <option value="Femenino">Femenino</option>
-                                                <option value="Otro">Otro</option>
-
-
-                                            </select>
-                                        </div>
-                                    </div>
-
                                     <!-- Grupo: tipo_part -->
-                                    <div class="formulario__grupo" id="grupo__tipo_part">
+                                    <div class="formulario__grupo" id="tipo_part">
                                         <label for="tipo_part" class="formulario__label">Tipo participante</label>
                                         <div class="formulario__grupo-input">
                                             <select id="tipo_part" name="tipo_part">
@@ -292,29 +223,60 @@
                                         </div>
                                     </div>
 
-                                    <!-- Grupo: tipo_do -->
-                                    <div class="formulario__grupo" id="grupo__tipo_do">
-                                        <label for="tipo_do" class="formulario__label">Tipo documento</label>
+                                    <!-- Grupo: genero_b_p -->
+                                    <div class="formulario__grupo" id="genero_b_p">
+                                        <label for="genero_b_p" class="formulario__label">Genero biologico</label>
                                         <div class="formulario__grupo-input">
-                                            <select id="tipo_do" name="tipo_do">
+                                            <select id="genero_b_p" name="genero_b_p">
                                                 <option value="seleccionar">seleccionar</option>
-                                                <option value="C.C">C.C</option>
-                                                <option value="C.E">C.E</option>
-                                                <option value="T.I">T.I</option>
+                                                <option value="Masculino">Masculino</option>
+                                                <option value="Femenino">Femenino</option>
+                                                <option value="Otro">Otro</option>
+
+
                                             </select>
                                         </div>
                                     </div>
 
-                                    <!-- Grupo: asistencia -->
-                                    <div class="formulario__grupo" id="grupo__asistencia">
-                                        <label for="eps" class="formulario__label">Asistencia</label>
+
+                                    <!-- Grupo: n_i_tp -->
+                                    <div class="formulario__grupo" id="grupo__n_i_tp">
+                                        <label for="n_i_tp" class="formulario__label">Numero de invitados por tipo
+                                            participante</label>
                                         <div class="formulario__grupo-input">
-                                            <select id="asistencia" name="asistencia">
-                                                <option value="seleccionar">seleccionar</option>
-                                                <option value="Asiste">Asiste</option>
-                                                <option value="No asiste">No asiste</option>
-                                            </select>
+                                            <input type="text" class="formulario__input" name="n_i_tp" id="n_i_tp"
+                                                placeholder="">
+                                            <i class="formulario__validacion-estado fas fa-times-circle"></i>
                                         </div>
+                                        <p class="formulario__input-error">Este campo no puede tener letras.
+                                        </p>
+                                    </div>
+                                </div>
+
+
+                                <div class="columna">
+
+
+                                    <!-- Grupo: e_min_p -->
+                                    <div class="formulario__grupo" id="grupo__e_min_p">
+                                        <label for="e_min_p" class="formulario__label">Edad mínima participante</label>
+                                        <div class="formulario__grupo-input">
+                                            <input type="text" class="formulario__input" name="e_min_p" id="e_min_p"
+                                                placeholder="Masculino/Femenino">
+                                            <i class="formulario__validacion-estado fas fa-times-circle"></i>
+                                        </div>
+                                        <p class="formulario__input-error">Este campo no puede tener letras.</p>
+                                    </div>
+
+                                    <!-- Grupo: e_max_p -->
+                                    <div class="formulario__grupo" id="grupo__e_max_p">
+                                        <label for="e_max_p" class="formulario__label">Edad máxima participante</label>
+                                        <div class="formulario__grupo-input">
+                                            <input type="text" class="formulario__input" name="e_max_p" id="e_max_p"
+                                                placeholder="Masculino/Femenino">
+                                            <i class="formulario__validacion-estado fas fa-times-circle"></i>
+                                        </div>
+                                        <p class="formulario__input-error">Este campo no puede tener letras.</p>
                                     </div>
 
 
@@ -347,7 +309,7 @@
 
 
             </div>
-            {{>footer_agergar_p}}
+            {{>footer_agregar_tp}}
 
         </div>
     </div>

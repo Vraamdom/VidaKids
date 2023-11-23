@@ -188,210 +188,174 @@
 
           <div class="row">
             <div class="col-md-12 col-sm-12 ">
-                <div class="formularios">
-                    <div class="bloque-formulario">
-                        <div class="page-title">
-                            <div class="title_right">
-                                <h1 class="titulo_formulario">Editar evento</h1>
-                                
+                <form action="" class="formulario" id="formulario">
+
+
+                    <div class="columnas">
+                        <div class="columna">
+                            <!-- Grupo: nombre_e -->
+                            <div class="formulario__grupo" id="grupo__nombre_e">
+                                <label for="nombre_e" class="formulario__label">Nombre evento</label>
+                                <div class="formulario__grupo-input">
+                                    <input type="text" class="formulario__input" name="nombre_e" id="nombre_e"
+                                        placeholder="johan cañola">
+                                    <i class="formulario__validacion-estado fas fa-times-circle"></i>
+                                </div>
+                                <p class="formulario__input-error">El campo no puede contener numeros</p>
                             </div>
-                            <button type="submit" id="boton_volver" class="boton_volver">Volver</button>
+
+
+                            <!-- Grupo: nombre_em -->
+                            <div class="formulario__grupo" id="grupo__nombre_em">
+                                <label for="nombre_em" class="formulario__label">Nombre empresa</label>
+                                <div class="formulario__grupo-input">
+                                    <input type="text" class="formulario__input" name="nombre_em" id="nombre_em"
+                                        placeholder="0000000000">
+                                    <i class="formulario__validacion-estado fas fa-times-circle"></i>
+                                </div>
+                                <p class="formulario__input-error">El campo no puede contener letras.</p>
+                            </div>
+
+
+                            <!-- Grupo: NIT -->
+                            <div class="formulario__grupo" id="grupo__NIT">
+                                <label for="NIT" class="formulario__label">NIT empresa</label>
+                                <div class="formulario__grupo-input">
+                                    <input type="text" class="formulario__input" name="NIT" id="NIT" placeholder="">
+                                    <i class="formulario__validacion-estado fas fa-times-circle"></i>
+                                </div>
+                                <p class="formulario__input-error">El campo targeta de identidad no puede contener
+                                    letras.
+                                </p>
+                            </div>
+
+
+                            <!-- Grupo: encargado_e -->
+                            <div class="formulario__grupo" id="grupo__encargado_e">
+                                <label for="encargado_e" class="formulario__label">Encargado empresa</label>
+                                <div class="formulario__grupo-input">
+                                    <input type="text" class="formulario__input" name="encargado_e" id="encargado_e"
+                                        placeholder="">
+                                    <i class="formulario__validacion-estado fas fa-times-circle"></i>
+                                </div>
+                                <p class="formulario__input-error">El campo no puede contener numeros.</p>
+                            </div>
+
+                            <!-- Grupo: fecha_i -->
+                            <div class="formulario__grupo" id="grupo__fecha_i">
+                                <label for="fecha_i" class="formulario__label">Fecha/Hora Inicio </label>
+                                <div class="formulario__grupo-input">
+                                    <input type="text" class="formulario__input" name="fecha_i" id="fecha_i"
+                                        placeholder="">
+                                    <i class="formulario__validacion-estado fas fa-times-circle"></i>
+                                </div>
+                                <p class="formulario__input-error">El campo targeta de identidad no puede contener
+                                    letras.
+                                </p>
+                            </div>
+                            
+                            <!-- Grupo: estado -->
+                            <div class="formulario__grupo" id="grupo__">
+                                <label for="estado" class="formulario__label">Estado</label>
+                                <div class="formulario__grupo-input">
+                                    <select id="estado" name="estado">
+                                        <option value="seleccionar">seleccionar</option>
+                                        <option value="Finalizado">Finalizado</option>
+                                        <option value="Aplazado">Aplazado</option>
+                                        <option value="Cancelado">Cancelado</option>
+                                        <option value="En ejecución">En ejecución</option>
+                                        <option value="A ejecutar">A ejecutar</option>
+                                    </select>
+                                </div>
+                            </div>
+
                         </div>
 
-                        <div class="formulario">
-                            <form action="" id="form_agregar_evento">
-                                <div class="formulario_bloque-uno">
-                                    <div class="input-control">
-                                        <label for="text">Nombre evento</label>
-                                        <input type="text" name="" id="nombre_evento">
-                                        <div class="error"></div>
-                                    </div>
 
-                                    <div class="input-control">
-                                        <label for="text">Fecha/Hora Inicio</label>
-                                        <input type="datetime-local" name="" id="hora_i">
-                                        <div class="error"></div>
-                                    </div>
-
-                                    <div class="input-control">
-                                        <label for="text">Fecha/Hora fin</label>
-                                        <input type="datetime-local" name="" id="hora_f">
-                                        <div class="error"></div>
-                                    </div>
-
-                                    <div class="input-control">
-                                        <label for="text">Encargado fundación</label>
-                                        <input type="text" name="" id="encargado_f">
-                                        <div class="error"></div>
-                                    </div>
-
-                                     <div class="input-control">
-                                        <label for="text">Telefono encargado empresa</label>
-                                        <input type="text" name="" id="telefono_e">
-                                        <div class="error"></div>
-                                    </div>
+                        <div class="columna">
 
 
-                                    <div class="input-control">
-                                        <label for="text">Número participantes</label>
-                                        <input type="text" name="" id="numero_p">
-                                        <div class="error"></div>
-                                    </div>
+                            <!-- Grupo: lugar_r -->
+                            <div class="formulario__grupo" id="grupo__lugar_r">
+                                <label for="lugar_r" class="formulario__label">Lugar realizacion</label>
+                                <div class="formulario__grupo-input">
+                                    <input type="text" class="formulario__input" name="lugar_r" id="lugar_r"
+                                        placeholder="">
+                                    <i class="formulario__validacion-estado fas fa-times-circle"></i>
                                 </div>
-                    
-                                <div class="formulario_bloque-dos">
+                                <p class="formulario__input-error">El nombre del cuidador no puede contener
+                                    numericos.</p>
+                            </div>
 
-                                    <div class="input-control">
-                                        <label for="select">Estado</label>
-                                        <select name="" id="estado_evento">
-                                            <option value="seleccionar">seleccionar</option>
-                                            <option value="Finalizado">Finalizado</option>
-                                            <option value="Aplazado">Aplazado</option>
-                                            <option value="Cancelado">Cancelado</option>
-                                            <option value="En ejecución">En ejecución</option>
-                                            <option value="A ejecutar">A ejecutar</option>
-                                        </select>
-                                        <div class="error"></div>
-                                    </div>
 
-                                    <div class="input-control">
-                                        <label for="text">Nombre empresa</label>
-                                        <input type="text" name="" id="nombre_empresa">
-                                        <div class="error"></div>
-                                    </div>
-
-                                    <div class="input-control">
-                                        <label for="text">NIT empresa</label>
-                                        <input type="text" name="" id="nit">
-                                        <div class="error"></div>
-                                    </div>
-                                    
-                                    <div class="input-control">
-                                        <label for="text">Encargado empresa</label>
-                                        <input type="text" name="" id="encargado_e">
-                                        <div class="error"></div>
-                                    </div>
-
-                                    <div class="input-control">
-                                        <label for="text">Lugar realizacion</label>
-                                        <input type="text" name="" id="lugar">
-                                        <div class="error"></div>
-                                    </div>
-                                    
+                            <!-- Grupo: encargado_f -->
+                            <div class="formulario__grupo" id="grupo__encargado_f">
+                                <label for="encargado_f" class="formulario__label">Encargado fundación</label>
+                                <div class="formulario__grupo-input">
+                                    <input type="text" class="formulario__input" name="encargado_f" id="encargado_f"
+                                        placeholder="">
+                                    <i class="formulario__validacion-estado fas fa-times-circle"></i>
                                 </div>
-                                <button type="submit" class="boton" name="" id="boton">Editar evento</button>
-                            </form>
-                        </div>
-                    </div>
-
-                    <div class="bloque-formulario">
-                        <div class="page-title">
-                            <div class="title_right">
-                                <h1 class="titulo_formulario">Editar un tipo de participante</h1>
-                       
-                            </div>
-                        </div>
-                        
-                    </div>
-                    
-                    <div class="bloque-tabla">
-                        <section class="search_icon">
-
-                            <div class="titulo_s">
-                                <h4>Lista tipo de participantes</h4>
-
+                                <p class="formulario__input-error">El campo no puede contener letras.</p>
                             </div>
 
-                        </section>
 
-
-                        <main>
-                            <div class="tabla">
-                                <table id="tblPart" class="table table-striped">
-                                    <thead>
-                                        <tr>
-                                            <th scope="col">ID</th>
-                                            <th scope="col">Tipo participante</th>
-                                            <th scope="col">Edad minima</th>
-                                            <th scope="col">Edad maxima</th>
-                                            <th scope="col">genero biologico</th>
-                                            <th scope="col">Nro invitados por tipo</th>
-                                            <th scope="col" class="th_center">Opciones</th>
-
-
-                                        </tr>
-                                    </thead>
-                                    <tbody>
-                                        
-                                    </tbody>
-                                </table>
-                                <div class="pagination" id="pagination_part">
-                                    <button class="btn btn-info" id="prevPage_part">Anterior</button>
-                                    <span id="currentPage_part">
-                                        <h6>1</h6>
-                                    </span>
-                                    <button class="btn btn-info" id="nextPage_part">Siguiente</button>
+                            <!-- Grupo: t_e_e -->
+                            <div class="formulario__grupo" id="grupo__t_e_e">
+                                <label for="t_e_e" class="formulario__label">Telefono encargado empresa </label>
+                                <div class="formulario__grupo-input">
+                                    <input type="text" class="formulario__input" name="t_e_e" id="t_e_e" placeholder="">
+                                    <i class="formulario__validacion-estado fas fa-times-circle"></i>
                                 </div>
-
+                                <p class="formulario__input-error">El campo no puede contener numeros.</p>
                             </div>
 
-                        </main>
-                    </div>
 
-    
-                    <div class="bloque-formulario">
-                        <div class="page-title">
-                            <div class="title_right">
-                                <h1 class="titulo_formulario">Editar un vehículo contratado</h1>
-                       
+                            <!-- Grupo: numero_p -->
+                            <div class="formulario__grupo" id="grupo__numero_p">
+                                <label for="numero_p" class="formulario__label">Número participantes</label>
+                                <div class="formulario__grupo-input">
+                                    <input type="text" class="formulario__input" name="numero_p" id="numero_p"
+                                        placeholder="3127351198">
+                                    <i class="formulario__validacion-estado fas fa-times-circle"></i>
+                                </div>
+                                <p class="formulario__input-error">El campo no puede contener letras. </p>
                             </div>
+
+
+
+                            <!-- Grupo: fecha_f -->
+                            <div class="formulario__grupo" id="grupo__fecha_f">
+                                <label for="fecha_f" class="formulario__label">Fecha/Hora fin</label>
+                                <div class="formulario__grupo-input">
+                                    <input type="text" class="formulario__input" name="fecha_f" id="fecha_f"
+                                        placeholder="">
+                                    <i class="formulario__validacion-estado fas fa-times-circle"></i>
+                                </div>
+                                <p class="formulario__input-error">El campo targeta de identidad no puede contener
+                                    letras.
+                                </p>
+                            </div>
+                            
+
+
                         </div>
 
+
                     </div>
 
-                   <div class="bloque-tabla">
-                        <section class="search_icon">
-
-                            <div class="titulo_s">
-                                <h4>Lista vehículos contratados</h4>
-
-                            </div>
-
-                        </section>
-
-
-                        <main>
-                            <div class="tabla">
-                                <table id="tblVeh" class="table table-striped">
-                                    <thead>
-                                        <tr>
-                                            <th scope="col">ID</th>
-                                            <th scope="col">Tipo vehículo</th>
-                                            <th scope="col">Puestos</th>
-                                            <th scope="col">Placa vehículo</th>
-                                            <th scope="col" class="th_center">Opciones</th>
-
-
-                                        </tr>
-                                    </thead>
-                                    <tbody>
-                                        
-                                    </tbody>
-                                </table>
-                                <div class="pagination" id="pagination_ve">
-                                    <button class="btn btn-info" id="prevPage_ve">Anterior</button>
-                                    <span id="currentPage_ve">
-                                        <h6>1</h6>
-                                    </span>
-                                    <button class="btn btn-info" id="nextPage_ve">Siguiente</button>
-                                </div>
-
-                            </div>
-                        </main>
+                    <div class="formulario__mensaje" id="formulario__mensaje">
+                        <p><i class="fas fa-exclamation-triangle"></i> <b>Error:</b> Por favor rellena el formulario
+                            correctamente. </p>
                     </div>
-                        
 
-                </div>
+
+                    <div class="formulario__grupo formulario__grupo-btn-enviar">
+                        <button type="submit" class="formulario__btn">Enviar</button>
+                        <p class="formulario__mensaje-exito" id="formulario__mensaje-exito">Formulario enviado
+                            exitosamente!</p>
+                    </div>
+                </form>
 
                 <div class="clearfix"></div>
               

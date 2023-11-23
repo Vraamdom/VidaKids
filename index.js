@@ -26,6 +26,17 @@ app.get('/agregar_participante',(req,res)=>{
     })
 })
 
+app.get('/agregar_tipo_participante',(req,res)=>{
+    res.render('agregar_tipo_participante',{
+        nombre : 'vramdom'
+    })
+})
+
+app.get('/agregar_vehiculo',(req,res)=>{
+    res.render('agregar_vehiculo',{
+        nombre : 'vramdom'
+    })
+})
 app.get('/eventos',(req,res)=>{
     res.render('calendar',{
         nombre : 'vramdom'
@@ -49,6 +60,39 @@ app.get('/editar_vehiculo',(req,res)=>{
         nombre : 'vramdom'
     })
 })
+
+// TABLAS RUTAS
+app.get('/index_participantes',(req,res)=>{
+    res.render('index_participantes',{
+        nombre : 'vramdom'
+    })
+})
+
+app.get('/index_vehiculos',(req,res)=>{
+    res.render('index_vehiculos',{
+        nombre : 'vramdom'
+    })
+})
+
+app.get('/index_tipo_participantes',(req,res)=>{
+    res.render('index_tipo_p',{
+        nombre : 'vramdom'
+    })
+})
+
+app.post('/index_participantes',(req,res)=>{
+    res.render('index_participantes')
+})
+
+app.post('/index_vehiculos',(req,res)=>{
+    res.render('index_vehiculos')
+})
+
+app.post('/index_tipo_participantes',(req,res)=>{
+    res.render('index_tipo_p')
+})
+
+// ============================================
 
 app.post('/agregar_evento',(req,res)=>{
     res.render('agregar_evento')

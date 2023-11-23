@@ -13,30 +13,7 @@ const lugar_realizacion = document.getElementById('lugar')
 const telefono_encargado = document.getElementById('telefono_e')
 const numero_participantes = document.getElementById('numero_p')
 
-// AGREGAR TIPO DE PARTICIPANTE VARIABLES
-const formulario_tipo_part = document.getElementById('form_tipo_participante')
-const edad_max = document.getElementById('edad_max')
-const edad_min = document.getElementById('edad_min')
-const tipo_participante = document.getElementById('tipo_part')
-const genero_biologico = document.getElementById('genero_b')
-const nro_invitados_tipo = document.getElementById('nro_invitados_p')
 
-// AGREGAR VEHICULO CONTRATADO
-const formulario_vehiculos = document.getElementById('form_vehiculos')
-const tipo_vehiculo = document.getElementById('tipo_ve')
-const placa_vehiculo = document.getElementById('placa_ve')
-const puestos_vehiculo = document.getElementById('puestos_ve')
-
-// AGREGAR PARTICIPANTE
-const formulario_participantes = document.getElementById('form_agregar_participante')
-const nombre_participante = document.getElementById('nombre_participante')
-const edad = document.getElementById('edad')
-const genero_b_p = document.getElementById('genero_b_p')
-const asistencia = document.getElementById('asistencia')
-const tipo_do = document.getElementById('tipo_do')
-const placa_vehiculo_p = document.getElementById('placa_vehiculo_p')
-const tipo_part = document.getElementById('tipo_part')
-const nro_documento = document.getElementById('nro_documento')
 // VOLVER AL INDEX DE  EVENTO
 const boton_volver = document.getElementById('boton_volver')
 
@@ -69,19 +46,6 @@ formulario.addEventListener('submit', e =>{
     validateInputs_Evento()
 })
 
-formulario_tipo_part.addEventListener('submit', e =>{
-    e.preventDefault()
-
-
-    validateInputs_tipo_part()
-})
-
-formulario_vehiculos.addEventListener('submit', e =>{
-    e.preventDefault()
-
-
-    validateInputs_vehiculos()
-})
 
 
 
@@ -250,116 +214,3 @@ const validateInputs_Evento = () =>{
 
     
 }
-// VALDIACIONES AGREGAR TIPO PARTICIPANTE =============================================================================
-const validateInputs_tipo_part = () =>{
-
-
-    // VALIDA CAMPOS AGREGAR TIPO PARTICIPANTE
-    const edad_max_value = edad_max.value.trim()
-    const edad_min_value = edad_min.value.trim()
-    const tipo_participante_value = tipo_participante.value.trim()
-    const genero_biologico_value = genero_biologico.value.trim()
-    const nro_invitados_tipo_value = nro_invitados_tipo.value.trim()
-
-
-    // valido select
-    if(tipo_participante_value === "seleccionar"){
-        setError(tipo_participante, 'Debes de seleccionar una opción valida')
-    }else{
-        setSuccess(tipo_participante)
-    }
-
-
-
-    if(genero_biologico_value === "seleccionar"){
-        setError(genero_biologico, 'Debes de seleccionar una opción valida')
-    }else{
-        setSuccess(genero_biologico)
-    }
-
-    // valido numeros
-    if(edad_max_value === ""){
-        setError(edad_max, 'No puedes dejar este campo vacio.')
-    }else if(!validarNumero(edad_max_value)){
-        setError(edad_max, 'Solo puedes ingresar números.')
-    }else{
-        setSuccess(edad_max)
-    }
-
-    if(edad_min_value === ""){
-        setError(edad_min, 'No puedes dejar este campo vacio.')
-    }else if(!validarNumero(edad_min_value)){
-        setError(edad_min, 'Solo puedes ingresar números.')
-    }else{
-        setSuccess(edad_min)
-    }
-
-    if(nro_invitados_tipo_value === ""){
-        setError(nro_invitados_tipo, 'No puedes dejar este campo vacio.')
-    }else if(!validarNumero(nro_invitados_tipo_value)){
-        setError(nro_invitados_tipo, 'Solo puedes ingresar números.')
-    }else{
-        setSuccess(nro_invitados_tipo)
-    }
-    if(validarNumero(nro_invitados_tipo_value) && validarNumero(edad_min_value) && validarNumero(edad_max_value) && genero_biologico_value != "seleccionar" && tipo_participante_value != "seleccionar"){
-        Swal.fire({
-            position: "center",
-            icon: "success",
-            title: "El tipo de participante ha sido registrado.",
-            showConfirmButton: false,
-            timer: 1500
-          });
-    }
-
-}
-
-//  VALIDO VEHICULOS CONTRATADOS ==========================================================================================
-const validateInputs_vehiculos= () =>{
-
-
-    // VALIDA CAMPOS AGREGAR VEHICULOS CONTRATADOS
-    const tipo_vehiculo_value = tipo_vehiculo.value.trim()
-    const placa_vehiculo_value = placa_vehiculo.value.trim()
-    const puestos_vehiculo_value = puestos_vehiculo.value.trim()
-
-
-
-    // valido select
-    if(tipo_vehiculo_value === "seleccionar"){
-        setError(tipo_vehiculo, 'Debes de seleccionar una opción valida')
-    }else{
-        setSuccess(tipo_vehiculo)
-    }
-
-    // valido placa
-    if(placa_vehiculo_value === ""){
-        setError(placa_vehiculo, 'No puedes dejar este campo vacio.')
-    }else if(!validarPlaca(placa_vehiculo_value)){
-        setError(placa_vehiculo, 'No ingresaste una placa de vehículo valida.')
-    }else{
-        setSuccess(placa_vehiculo)
-    }
-
-  
-
-    // valido numeros
-    if(puestos_vehiculo_value === ""){
-        setError(puestos_vehiculo, 'No puedes dejar este campo vacio.')
-    }else if(!validarNumero(puestos_vehiculo_value)){
-        setError(puestos_vehiculo, 'Solo puedes ingresar números.')
-    }else{
-        setSuccess(puestos_vehiculo)
-    }
-
-
-    if(validarNumero(puestos_vehiculo_value) && validarPlaca(placa_vehiculo_value) && tipo_vehiculo_value != "seleccionar"){
-        Swal.fire({
-            position: "center",
-            icon: "success",
-            title: "El vehículo contratado ha sido registrado.",
-            showConfirmButton: false,
-            timer: 1500
-          });
-    }
-}
-
