@@ -1,216 +1,146 @@
-// AGREGAR EVENTO VARIABLES
-const formulario = document.getElementById('form_agregar_evento')
-const nombre_evento = document.getElementById('nombre_evento')
-const hora_inicial = document.getElementById('hora_i')
-const hora_final = document.getElementById('hora_f')
-const fecha_evento = document.getElementById('fecha_evento')
-const encargado_funda = document.getElementById('encargado_f')
-const nit_empresa = document.getElementById('nit')
-const estado_evento = document.getElementById('estado_evento')
-const nombre_empresa = document.getElementById('nombre_empresa')
-const encargado_empresa = document.getElementById('encargado_e')
-const lugar_realizacion = document.getElementById('lugar')
-const telefono_encargado = document.getElementById('telefono_e')
-const numero_participantes = document.getElementById('numero_p')
+const formulario = document.getElementById('formulario');
+const inputs = document.querySelectorAll('#formulario input');
 
 
-// VOLVER AL INDEX DE  EVENTO
-const boton_volver = document.getElementById('boton_volver')
+const expresiones = {
+    usuario: /^[a-zA-Z0-9\_\-]{4,16}$/, // Letras, numeros, guion y guion_bajo
+    nombre: /^[a-zA-ZÀ-ÿ\s]{1,40}$/, // Letras y espacios, pueden llevar acentos.
+    password: /^.{4,12}$/, // 4 a 12 digitos.
+    correo: /^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+$/,
+    telefono: /^\d{7,14}$/, // 7 a 14 numeros.
+    fecha: /^(?:(?:(?:0?[1-9]|1\d|2[0-8])[/](?:0?[1-9]|1[0-2])|(?:29|30)[/](?:0?[13-9]|1[0-2])|31[/](?:0?[13578]|1[02]))[/](?:0{2,3}[1-9]|0{1,2}[1-9]\d|0?[1-9]\d{2}|[1-9]\d{3})|29[/]0?2[/](?:\d{1,2}(?:0[48]|[2468][048]|[13579][26])|(?:0?[48]|[13579][26]|[2468][048])00))$/,
+    contraseñaFuerte:/(?=(.*[0-9]))(?=.*[\!@#$%^&*()\\[\]{}\-_+=|:;"'<>,./?])(?=.*[a-z])(?=(.*[A-Z]))(?=(.*)).{8,}/,
+    un_nombre : /^[A-Z\u00C0-\u00D6\u00D8-\u00DE][a-z\u00DF-\u00F6\u00F8-\u00FF ]*$/,    //valida que solo la primera letra se mayuscula y el resto min
+    texto: /^[A-Z\u00C0-\u00D6\u00D8-\u00DE][a-zA-Z\u00C0-\u00D6\u00D8-\u00DE ]*$/,
+    numero: /^\d+$/,
+    placa: /^[a-zA-Z]{3}\s\d{3}$/
 
-const volver_index = () =>{
-    Swal.fire({
-        title: "Quieres salir del formulario?",
-        showDenyButton: true,
-        confirmButtonText: "Seguir",
-        denyButtonText: `Volver`
-      }).then((result) => {
-        /* Read more about isConfirmed, isDenied below */
-        if (result.isConfirmed) {
-            Swal.fire("Seguiras en el fomrulario", "", "success");
-        } else if (result.isDenied) {
-          Swal.fire("Redireccionando...", "", "info");
-          location.href = 'eventos'
-        }
-      });
-}
-boton_volver.addEventListener('click', e =>{
-    e.preventDefault()
-
-    volver_index()
-})
-
-formulario.addEventListener('submit', e =>{
-    e.preventDefault()
+}  
 
 
-    validateInputs_Evento()
-})
-
-
-
-
-
-
-
-const setError = (element, message) => {
-    const inputControl = element.parentElement;
-    const errorDisplay = inputControl.querySelector('.error');
-
-
-    errorDisplay.innerText = message;
-    inputControl.classList.add('error');
-    inputControl.classList.remove('success')
+const campos = {
+    nombre_e: false,
+    nombre_em: false,
+    NIT: false,
+    encargado_e: false,
+    encargado_f: false,
+    fecha_i: false,
+    fecha_f: false,
+    lugar_r: false,
+    t_e_e: false,
+    numero_p: false,
+    estado: false
 }
 
 
-const setSuccess = elemento =>{
-    const inputControl = elemento.parentElement
-    const errorDisplay = inputControl.querySelector('.error')
+const validarFormulario = (e) => {
+    switch (e.target.name) {
 
 
-    errorDisplay.innerText = ""
-    inputControl.classList.add('success')
-    inputControl.classList.remove('error')
+        case "nombre_e":
+            validarCampo(expresiones.texto, e.target, 'nombre_e');
+            break;
+
+
+        case "nombre_em":
+            validarCampo(expresiones.texto, e.target, 'nombre_em');
+            break;
+        case "NIT":
+            validarCampo(expresiones.numero, e.target, 'NIT');
+            break;
+        case "encargado_e":
+            validarCampo(expresiones.texto, e.target, 'encargado_e');
+            break;
+        case "encargado_f":
+            validarCampo(expresiones.texto, e.target, 'encargado_f');
+            break;
+        case "t_e_e":
+            validarCampo(expresiones.telefono, e.target, 'telefono_encargado_fundacion');
+            break;
+        case "fecha_i":
+            validarCampo(expresiones.telefono, e.target, 'fecha_i');
+            break;
+        case "lugar_r":
+            validarCampo(expresiones.texto, e.target, 'lugar_r');
+            break;
+        case "fecha_f":
+            validarCampo(expresiones.telefono, e.target, 'fecha_f');
+            break;
+        case "numero_p":
+            validarCampo(expresiones.telefono, e.target, 'numero_p');
+            break;
+    }
 }
 
-// VALIDA QUE EL FORMATO DEL CORREO ESTE BIEN(TEXTO @ TEXTO . TEXTO)
-const validarCorreo = email =>{
-    const re = /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
-    return re.test(String(email).toLowerCase());
+
+const validarCampo = (expresion, input, campo) => {
+    if (expresion.test(input.value)) {
+        document.getElementById(`grupo__${campo}`).classList.remove('formulario__grupo-incorrecto');
+        document.getElementById(`grupo__${campo}`).classList.add('formulario__grupo-correcto');
+        document.querySelector(`#grupo__${campo} i`).classList.add('fa-check-circle');
+        document.querySelector(`#grupo__${campo} i`).classList.remove('fa-times-circle');
+        document.querySelector(`#grupo__${campo} .formulario__input-error`).classList.remove('formulario__input-error-activo');
+        campos[campo] = true;
+    } else {
+        document.getElementById(`grupo__${campo}`).classList.add('formulario__grupo-incorrecto');
+        document.getElementById(`grupo__${campo}`).classList.remove('formulario__grupo-correcto');
+        document.querySelector(`#grupo__${campo} i`).classList.add('fa-times-circle');
+        document.querySelector(`#grupo__${campo} i`).classList.remove('fa-check-circle');
+        document.querySelector(`#grupo__${campo} .formulario__input-error`).classList.add('formulario__input-error-activo');
+        campos[campo] = false;
+    }
 }
 
-// VALIDA QUE TENGA ALMENOS 8 CARACTERES
-const validarContraseña = pass =>{
-    const re = /^.{8,}$/
-    return re.test(pass)
+
+const validarPassword2 = () => {
+    const inputPassword1 = document.getElementById('password');
+    const inputPassword2 = document.getElementById('password2');
+
+
+    if (inputPassword1.value !== inputPassword2.value) {
+        document.getElementById(`grupo__password2`).classList.add('formulario__grupo-incorrecto');
+        document.getElementById(`grupo__password2`).classList.remove('formulario__grupo-correcto');
+        document.querySelector(`#grupo__password2 i`).classList.add('fa-times-circle');
+        document.querySelector(`#grupo__password2 i`).classList.remove('fa-check-circle');
+        document.querySelector(`#grupo__password2 .formulario__input-error`).classList.add('formulario__input-error-activo');
+        campos['password'] = false;
+    } else {
+        document.getElementById(`grupo__password2`).classList.remove('formulario__grupo-incorrecto');
+        document.getElementById(`grupo__password2`).classList.add('formulario__grupo-correcto');
+        document.querySelector(`#grupo__password2 i`).classList.remove('fa-times-circle');
+        document.querySelector(`#grupo__password2 i`).classList.add('fa-check-circle');
+        document.querySelector(`#grupo__password2 .formulario__input-error`).classList.remove('formulario__input-error-activo');
+        campos['password'] = true;
+    }
 }
 
-// VALIDA QUE SOLO SEAN LETRAS(SE PUEDEN ESPACIOS Y LETRAS CON ACENTOS)
-const validarTexto = text => {
-    const re = /^[A-Za-zÁáÉéÍíÓóÚúÑñ\s]*$/
-    return re.test(String(text))
-}
 
-// VALIDA QUE SOLO SE INGRESEN LETRAS Y QUE LA PRIMERA SEA MAYUSCULA (LA PUEDEN USAR PARA CAMPOS COMO NOMBRES)
-const validarNombre = nombre => {
-    const re = /^[A-Z\u00C0-\u00D6\u00D8-\u00DE][a-zA-Z\u00C0-\u00D6\u00D8-\u00DE ]*$/
-
-// /^[A-Z\u00C0-\u00D6\u00D8-\u00DE][a-z\u00DF-\u00F6\u00F8-\u00FF ]*$/ (ESTA LINEA VALIDA QUE LA PRIMERA SEA MAYUSCULA PERO SI PONES TODAS MAYUSCULA TE MUESTRA ERROR DEPRONTO A ALGUIEN LE SIRVA POR ESO LA DEJO)
-    return re.test(nombre)
-}
-
-// VALIDA QUE SOLO SE PUEDAN INGRESAR NUMEROS
-const validarNumero = numero => {
-    const re = /^\d+$/
-    return re.test(numero)
-}
-// VALIDA EL NUMERO DE PLACA (SOLO PERMITE 3 LETRAS 3 NUMEROS Y UN ESPACIO)
-const validarPlaca = nro_placa => {
-    const re = /^[a-zA-Z]{3}\s\d{3}$/
-    return re.test(nro_placa)
-}
-
-const validateInputs_Evento = () =>{
-
-    // VALIDA CAMPOS AGREGAR EVENTO
-    const nombre_evento_value = nombre_evento.value.trim()
-    const encargado_funda_value = encargado_funda.value.trim()
-    const nit_empresa_value = nit_empresa.value.trim()
-    const estado_evento_value = estado_evento.value.trim()
-    const nombre_empresa_value = nombre_empresa.value.trim()
-    const encargado_empresa_value = encargado_empresa.value.trim()
-    const lugar_realizacion_value = lugar_realizacion.value.trim()
-    const telefono_encargado_value = telefono_encargado.value.trim()
-    const numero_participantes_value = numero_participantes.value.trim()
+inputs.forEach((input) => {
+    input.addEventListener('keyup', validarFormulario);
+    input.addEventListener('blur', validarFormulario);
+});
 
 
+formulario.addEventListener('submit', (e) => {
+    e.preventDefault();
 
-    // VALDIACIONES AGREGAR EVENTO
-    // valido nombres
 
-    if(nombre_evento_value === ""){
-        setError(nombre_evento, 'No puedes dejar este campo vacio.')
-    }else if(!validarNombre(nombre_evento_value)){
-        setError(nombre_evento, 'Se debe iniciar con la letra mayuscula y no se permiten caracteres especiales.')
-    }else{
-        setSuccess(nombre_evento)
+    const terminos = document.getElementById('terminos');
+    if (campos.usuario && campos.targetaIdentidad && campos.sexoBiologico && campos.beneficiario && campos.password && campos.correo && campos.telefono && terminos.checked) {
+        formulario.reset();
+
+
+        document.getElementById('formulario__mensaje-exito').classList.add('formulario__mensaje-exito-activo');
+        setTimeout(() => {
+            document.getElementById('formulario__mensaje-exito').classList.remove('formulario__mensaje-exito-activo');
+        }, 5000);
+
+
+        document.querySelectorAll('.formulario__grupo-correcto').forEach((icono) => {
+            icono.classList.remove('formulario__grupo-correcto');
+        });
+    } else {
+        document.getElementById('formulario__mensaje').classList.add('formulario__mensaje-activo');
     }
+});
 
-    if(encargado_funda_value === ""){
-        setError(encargado_funda, 'No puedes dejar este campo vacio.')
-    }else if(!validarNombre(encargado_funda_value)){
-        setError(encargado_funda, 'Se debe iniciar con la letra mayuscula y no se permiten caracteres especiales.')
-    }else{
-        setSuccess(encargado_funda)
-    }
-
-    if(nombre_empresa_value === ""){
-        setError(nombre_empresa, 'No puedes dejar este campo vacio.')
-    }else if(!validarNombre(nombre_empresa_value)){
-        setError(nombre_empresa, 'Se debe iniciar con la letra mayuscula y no se permiten caracteres especiales.')
-    }else{
-        setSuccess(nombre_empresa)
-    }
-
-    if(lugar_realizacion_value === ""){
-        setError(lugar_realizacion, 'No puedes dejar este campo vacio.')
-    }else if(!validarNombre(lugar_realizacion_value)){
-        setError(lugar_realizacion, 'Se debe iniciar con la letra mayuscula y no se permiten caracteres especiales.')
-    }else{
-        setSuccess(lugar_realizacion)
-    }
-
-    if(encargado_empresa_value === ""){
-        setError(encargado_empresa, 'No puedes dejar este campo vacio.')
-    }else if(!validarNombre(encargado_empresa_value)){
-        setError(encargado_empresa, 'Se debe iniciar con la letra mayuscula y no se permiten caracteres especiales.')
-    }else{
-        setSuccess(encargado_empresa)
-    }
-
-    // valido numeros
-
-    if(telefono_encargado_value === ""){
-        setError(telefono_encargado, 'No puedes dejar este campo vacio.')
-    }else if(!validarNumero(telefono_encargado_value)){
-        setError(telefono_encargado, 'Solo puedes ingresar números.')
-    }else{
-        setSuccess(telefono_encargado)
-    }
-
-    if(numero_participantes_value === ""){
-        setError(numero_participantes, 'No puedes dejar este campo vacio.')
-    }else if(!validarNumero(numero_participantes_value)){
-        setError(numero_participantes, 'Solo puedes ingresar números.')
-    }else{
-        setSuccess(numero_participantes)
-    }
-
-    if(nit_empresa_value === ""){
-        setError(nit_empresa, 'No puedes dejar este campo vacio.')
-    }else if(!validarNumero(nit_empresa_value)){
-        setError(nit_empresa, 'Solo puedes ingresar números.')
-    }else{
-        setSuccess(nit_empresa)
-    }
-    
-    // valido select
-
-    if(estado_evento_value === "seleccionar"){
-        setError(estado_evento, 'Debes de seleccionar una opción valida')
-    }else{
-        setSuccess(estado_evento)
-    }
-
-    if( validarNombre(nombre_evento_value) && validarNombre(encargado_funda_value) && validarNombre(nombre_empresa_value) &&  validarNombre(lugar_realizacion_value) && validarNombre(encargado_empresa_value) && validarNumero(telefono_encargado_value) && validarNumero(numero_participantes_value) && validarNumero(nit_empresa_value) && estado_evento_value != "seleccionar"){
-        Swal.fire({
-            position: "center",
-            icon: "success",
-            title: "El evento ha sido registrado.",
-            showConfirmButton: false,
-            timer: 1500
-          });
-    }
-
-    
-}
