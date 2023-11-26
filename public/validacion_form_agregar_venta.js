@@ -54,11 +54,17 @@ const validarCorreo = email => {
     return re.test(String(email).toLowerCase());
 }
 
+const validarFecha = fecha => {
+    const re = /^(2023)-(0[1-9]|1[0-2])-(0[1-9]|[12][0-9]|3[01])$/;
+    return re.test(fecha)
+  
+}
+
 
 // VALIDA QUE TENGA ALMENOS 8 CARACTERES
 const validarContraseña = pass => {
     const re = /^.{8,}$/
-    return re.test(pass)
+    return re.test(Date(pass))
 }
 
 
@@ -117,13 +123,13 @@ const validateInputs = () => {
         setSuccess(nombre_cliente_add_venta)
     }
 
-    // if (FechaValue == "") {
-    //     setError(fecha_add_venta,'No se puede dejar el campo vacio')
-    // }else if (!fechaHoraActual(FechaValue)) {
-    //     setError(fecha_add_venta, 'debe ser con fecha y hora actuales')
-    // }else{
-    //     setSuccess(fecha_add_venta)
-    // }
+    if (FechaValue == "") {
+        setError(fecha_add_venta,'No se puede dejar el campo vacio')
+    }else if (!validarFecha(FechaValue)) {
+        setError(fecha_add_venta, 'debe ser con fecha y hora actuales')
+    }else{
+        setSuccess(fecha_add_venta)
+    }
 
 
     if (totalValue === "") {

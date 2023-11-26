@@ -4,7 +4,9 @@ const apellidio_add_cliente=document.getElementById('apellido_cliente')
 const telefono_add_cliente = document.getElementById('telefono_cliente')
 const email_add_cliente = document.getElementById('email_cliente')
 const password_add_cliente = document.getElementById('password_cliente')
+const password_confirm_add_cliente = document.getElementById('password_confirmar_cliente')
 const direccion_add_cliente = document.getElementById('direccion_cliente')
+const departamento_add_cliente = document.getElementById('select_departamento')
 const pais_add_cliente = document.getElementById('select_pais')
 
 
@@ -89,6 +91,11 @@ const validarNombre = nombre => {
     return re.test(nombre)
 }
 
+const validarApellido = apellido => {
+    const re = /^[A-Z\u00C0-\u00D6\u00D8-\u00DE][a-zA-Z\u00C0-\u00D6\u00D8-\u00DE ]*$/
+    return re.test(apellido)
+}
+
 const validarDireccion = cadena => {
     const re = /^[A-Za-z\u00C0-\u00D6\u00D8-\u00DE0-9\s#-]+$/
     return re.test(cadena)
@@ -107,11 +114,10 @@ const validateInputs = () => {
     const emailValue = email_add_cliente.value.trim()
     const passValue = password_add_cliente.value.trim()
     const paisValue = pais_add_cliente.value.trim()
+    const passConfirmValue = password_confirm_add_cliente.value.trim()
     const nombreValue = nombre_add_cliente.value.trim()
+    const apellidoValue = apellidio_add_cliente.value.trim()
     const telefonoValue = telefono_add_cliente.value.trim()
-
-
-
 
     if (direccionValue === "") {
         setError(direccion_add_cliente, 'No puedes dejar este campo vacio.')
@@ -119,6 +125,14 @@ const validateInputs = () => {
         setError(direccion_add_cliente, 'No se permiten caracteres especiales.')
     } else {
         setSuccess(direccion_add_cliente)
+    }
+
+    if (apellidoValue === "") {
+        setError(apellidio_add_cliente, 'no se pueden dejar espacios vacios')   
+    }   else if (!validarApellido(apellidoValue)) {
+        setError(apellidio_add_cliente, 'No se permiten caracteres espciales, debe iniciar con letra mayuscula')       
+    }else{
+        setSuccess(apellidio_add_cliente)
     }
 
 
@@ -129,7 +143,6 @@ const validateInputs = () => {
     } else {
         setSuccess(nombre_add_cliente)
     }
-
 
     if (telefonoValue === "") {
         setError(telefono_add_cliente, 'No puedes dejar este campo vacio.')
@@ -163,6 +176,15 @@ const validateInputs = () => {
         setSuccess(password_add_cliente)
     }
 
+    if (passConfirmValue === "") {
+        setError(password_confirm_add_cliente, 'El campo contraseña debe de ser llenado.')
+    } else if (!validarContraseña(passConfirmValue)) {
+        setError(password_confirm_add_cliente, 'La contraseña debe de tener al menos 8 caracteres.')
+    } else if (passConfirmValue == passValue) {
+        setSuccess(password_confirm_add_cliente)  
+    }else{
+        setError(password_confirm_add_cliente, 'las contraseñas deben coincidir')
+    }
 
     if (paisValue === "seleccionar") {
         setError(pais_add_cliente, 'Debes de seleccionar una opción valida')

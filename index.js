@@ -29,17 +29,25 @@ app.get('/productos', (req, res) =>{
         "Precio":"3500"
     })
 })
+//Lista de clientes
 app.get('/lista_clientes', (req, res) =>{
     res.render('listarClientes')
 })
 app.post('/lista_clientes', (req, res) =>{ //nombre ruta
     res.render('listarClientes') //nombre archivo a renderizar con hbs
 })
-
+//-----------------------------------------------------------------------//
+//Lista de ventas
 app.get('/lista_ventas', (req, res) =>{
     res.render('listar_ventas')
 })
 
+app.post('/lista_ventas', (req, res) =>{
+    res.render('listar_ventas')
+})
+//-----------------------------------------------------------------------//
+
+//Agregar Ventas
 app.get('/agregar_ventas', (req, res) =>{
     res.render('agregar_venta')
 })
@@ -47,7 +55,9 @@ app.get('/agregar_ventas', (req, res) =>{
 app.post('/agregar_ventas', (req, res) =>{
     res.render('agregar_venta')
 })
+//-----------------------------------------------------------------------//
 
+//agregar clientes
 app.get('/agregar_clientes', (req, res) =>{
     res.render('agregar_cliente')
 })
@@ -55,7 +65,9 @@ app.get('/agregar_clientes', (req, res) =>{
 app.post('/agregar_clientes', (req, res) =>{
     res.render('agregar_cliente')
 })
+//-----------------------------------------------------------------------//
 
+//editar clientes
 app.get('/editar_clientes', (req, res) =>{
     res.render('editar_cliente')
 })
@@ -63,16 +75,42 @@ app.get('/editar_clientes', (req, res) =>{
 app.post('/editar_clientes', (req, res) =>{
     res.render('editar_cliente')
 })
+//-----------------------------------------------------------------------//
 
+//editar ventas
+app.get('/editar_ventas', (req, res) =>{
+    res.render('editar_venta')
+})
 
+app.post('/editar_ventas', (req, res) =>{
+    res.render('editar_venta')
+})
+//-----------------------------------------------------------------------//
+//detalle_ventas
 app.get('/detalle_ventas', (req, res) =>{
     res.render('detalle_venta')
 })
 
-app.post('/lista_ventas', (req, res) =>{
-    res.render('listar_ventas')
+app.post('/detalle_ventas', (req, res) =>{
+    res.render('detalle_venta')
+})
+//-----------------------------------------------------------------------//
+//detalle_clientes
+app.get('/detalle_clientes', (req, res) =>{
+    res.render('detalle_cliente')
 })
 
+app.post('/detalle_clientes', (req, res) =>{
+    res.render('detalle_cliente')
+})
+//-----------------------------------------------------------------------//
+app.get('/detalle_clientes', (req, res) =>{
+    res.render('detalle_cliente')
+})
+
+app.post('/detalle_clientes', (req, res) =>{
+    res.render('detalle_cliente')
+})
 app.get('*', (req, res) =>{
     res.render('404')
 })

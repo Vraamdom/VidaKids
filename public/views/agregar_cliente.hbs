@@ -207,6 +207,7 @@
                 </div>
             </div>
             <!-- /top navigation -->
+           
 
             <!-- page content -->
             <div class="right_col" role="main">
@@ -214,6 +215,7 @@
                     <div class="col-md-12 col-sm-12">
                         <div class="bloque-formulario">
                             <div class="formulario">
+                                <a href="lista_clientes"><button id="btn-volver" type="button">Volver</button></a>
                                 <h1 class="titulo_formulario">Agregar Cliente</h1>
                                 <form action="" id="form">
                                     <div class="formulario_bloque-uno">
@@ -221,38 +223,51 @@
                                         <div class="input-control">
                                             <label for="text">Nombre Cliente</label>
                                             <input type="text" name="" id="nombre_cliente">
+                                            *requerido
                                             <div class="error"></div>
                                         </div>
-                                        
-                                          <div class="input-control">
+
+                                        <div class="input-control">
                                             <label for="text">Apellido Cliente</label>
                                             <input type="text" name="" id="apellido_cliente">
+                                            *requerido
                                             <div class="error"></div>
                                         </div>
 
                                         <div class="input-control">
                                             <label for="pass">Contraseña</label>
                                             <input type="password" name="" id="password_cliente">
+                                            *requerido
                                             <div class="error"></div>
                                         </div>
-
 
                                         <div class="input-control">
-                                            <label for="email">Correo</label>
-                                            <input type="email" name="" id="email_cliente">
+                                            <label for="password-confirm">Confirmar Contraseña</label>
+                                            <input type="password" name="" id="password_confirmar_cliente">
+                                            *requerido
                                             <div class="error"></div>
                                         </div>
 
-                                       
+
+
+
+
 
 
                                     </div>
 
                                     <div class="formulario_bloque-dos">
+                                        <div class="input-control">
+                                            <label for="email">Correo</label>
+                                            <input type="email" name="" id="email_cliente">
+                                            *requerido
+                                            <div class="error"></div>
+                                        </div>
 
                                         <div class="input-control">
                                             <label for="text">Telefono</label>
                                             <input type="text" name="" id="telefono_cliente">
+                                            *requerido
                                             <div class="error"></div>
                                         </div>
 
@@ -272,12 +287,12 @@
                                         <div class="input-control">
                                             <label for="select">Departamento</label>
                                             <select name="" id="select_departamento" disabled>
-                                                <option value="seleccionar">seleccionar</option>    
+                                                <option value="seleccionar">seleccionar</option>
                                             </select>
                                             <div class="error"></div>
                                         </div>
 
-                                         
+
 
                                         <div class="input-control">
                                             <label for="text">direccion</label>
@@ -291,6 +306,8 @@
 
                                     </div>
                                     <button type="submit" class="boton" name="" id="boton">Agregar Cliente</button>
+                                    
+                                   
                                 </form>
                             </div>
 
