@@ -72,17 +72,14 @@
                                         <li><a href="">Profesionales Voluntarios</a></li>
                                     </ul>
                                 </li>
-                                <li><a><i class="fa fa-table"></i> Donaaciones <span
+                               
+                               <li><a><i class="fa fa-bar-chart-o"></i> Ventas <span
                                             class="fa fa-chevron-down"></span></a>
                                     <ul class="nav child_menu">
-                                        <li><a href="tables.html">Tables</a></li>
-                                    </ul>
-                                </li>
-                                <li><a><i class="fa fa-bar-chart-o"></i> Ventas <span
-                                            class="fa fa-chevron-down"></span></a>
-                                    <ul class="nav child_menu">
-                                        <li><a href="chartjs.html">Chart JS</a></li>
-
+                                        <li><a href="lista_ventas">Gestion de Ventas</a></li>
+                                        <li><a href="lista_clientes">Gestion de Clientes</a></li>
+                                        <li><a href="#">Gestion de Productos</a></li>
+                                        <li><a href="#">Gestion de categoria de Productos</a></li>
                                     </ul>
                                 </li>
 
@@ -201,18 +198,18 @@
 
                 <!-- /top tiles -->
 
-                <div class="row">
+                   <div class="row">
                     <div class="col-md-12 col-sm-12 ">
-                        <form action="" class="formulario" id="formulario">
-                            <h2>Agregar participante</h2>
+                        <form action="" class="formulario_ventas" id="form_add_venta">
+                            <h2>Agregar Venta</h2>
 
                             <div class="columnas">
                                 <div class="columna">
-                                    <!-- Grupo: beneficiario -->
-                                    <div class="formulario__grupo" id="grupo__nombre">
+                                    
+                                    <div class="formulario__grupo" id="grupo__nombre_cliente_venta">
                                         <label for="nombre" class="formulario__label">Nombre</label>
                                         <div class="formulario__grupo-input">
-                                            <input type="text" class="formulario__input" name="nombre" id="nombre"
+                                            <input type="text" class="formulario__input" name="nombre_cliente_venta" id="nombre_cliente_venta"
                                                 placeholder="">
                                             <i class="formulario__validacion-estado fas fa-times-circle"></i>
                                         </div>
@@ -220,11 +217,11 @@
                                     </div>
 
 
-                                    <!-- Grupo: edad -->
-                                    <div class="formulario__grupo" id="grupo__apellido">
+                                   
+                                    <div class="formulario__grupo" id="grupo__apellido_cliente_venta">
                                         <label for="apellido" class="formulario__label">Apellido</label>
                                         <div class="formulario__grupo-input">
-                                            <input type="text" class="formulario__input" name="apellido" id="apellido"
+                                            <input type="text" class="formulario__input" name="apellido_cliente_venta" id="apellido_cliente_venta"
                                                 placeholder="">
                                             <i class="formulario__validacion-estado fas fa-times-circle"></i>
                                         </div>
@@ -233,28 +230,24 @@
                                     </div>
 
 
-                                    <!-- Grupo: placa_vehiculo_p -->
-                                    <div class="formulario__grupo" id="grupo__correo">
-                                        <label for="correo" class="formulario__label">Correo electronico
-                                            personal</label>
+                                    <div class="formulario__grupo" id="grupo__fecha_venta">
+                                        <label for="correo" class="formulario__label">Fecha de venta</label>
                                         <div class="formulario__grupo-input">
-                                            <input type="text" class="formulario__input" name="correo"
-                                                id="correo" placeholder="">
+                                            <input type="date" class="formulario__input" name="fecha_venta"
+                                                id="fecha_venta" placeholder="">
                                             <i class="formulario__validacion-estado fas fa-times-circle"></i>
                                         </div>
-                                        <p class="formulario__input-error">El campo targeta de identidad no puede
-                                            contener
-                                            letras.
+                                        <p class="formulario__input-error">
+                                            Debe de contener una fecha y hora actual
                                         </p>
                                     </div>
 
 
-                                    <!-- Grupo: telefono -->
-                                    <div class="formulario__grupo" id="grupo__telefono">
-                                        <label for="telefono" class="formulario__label">Telefono</label>
+                                    <div class="formulario__grupo" id="grupo__precio_total_venta">
+                                        <label for="text" class="formulario__label">Precio Total</label>
                                         <div class="formulario__grupo-input">
-                                            <input type="text" class="formulario__input" name="telefono"
-                                                id="telefono" placeholder="">
+                                            <input type="text" class="formulario__input" name="precio_total_venta"
+                                                id="precio_total_venta" placeholder="">
                                             <i class="formulario__validacion-estado fas fa-times-circle"></i>
                                         </div>
                                         <p class="formulario__input-error">El campo no puede contener letras ni estar
@@ -263,57 +256,6 @@
                                 </div>
 
 
-                                <div class="columna">
-                                   <!-- Grupo: pass -->
-                                    <div class="formulario__grupo" id="grupo__pass">
-                                        <label for="pass" class="formulario__label">Contraseña</label>
-                                        <div class="formulario__grupo-input">
-                                            <input type="text" class="formulario__input" name="pass"
-                                                id="pass" placeholder="">
-                                            <i class="formulario__validacion-estado fas fa-times-circle"></i>
-                                        </div>
-                                        <p class="formulario__input-error">El campo no puede contener letras ni estar
-                                            vacio.</p>
-                                    </div>
-
-                                    <!-- Grupo: pass2 -->
-                                    <div class="formulario__grupo" id="grupo__pass2">
-                                        <label for="pass" class="formulario__label">Confirmar contraseña</label>
-                                        <div class="formulario__grupo-input">
-                                            <input type="text" class="formulario__input" name="pass2"
-                                                id="pass2" placeholder="">
-                                            <i class="formulario__validacion-estado fas fa-times-circle"></i>
-                                        </div>
-                                        <p class="formulario__input-error">El campo no puede contener letras ni estar
-                                            vacio.</p>
-                                    </div>
-
-                                    <!-- Grupo: asistencia -->
-                                    <div class="formulario__grupo" id="grupo__pais">
-                                        <label for="pais" class="formulario__label">Pais</label>
-                                        <div class="formulario__grupo-input">
-                                            <select id="pais" name="pais">
-                                                <option value="seleccionar">seleccionar</option>
-                                                <option value="Asiste">Asiste</option>
-                                                <option value="No asiste">No asiste</option>
-                                            </select>
-                                        </div>
-                                    </div>
-
-                                    <div class="formulario__grupo" id="grupo__departamento">
-                                        <label for="departamento" class="formulario__label">Departamento</label>
-                                        <div class="formulario__grupo-input">
-                                            <select id="departamento" name="departamento">
-                                                <option value="seleccionar">seleccionar</option>
-                                                <option value="Asiste">Asiste</option>
-                                                <option value="No asiste">No asiste</option>
-                                            </select>
-                                        </div>
-                                    </div>
-
-
-
-                                </div>
 
 
                             </div>
@@ -358,7 +300,7 @@
         </div>
     </div>
      <script src="https://kit.fontawesome.com/2c36e9b7b1.js" crossorigin="anonymous"></script>
-    {{>footer_validacion_clientes}}
+    {{>footer_validacion_ventas}}
 
 
 
