@@ -1,6 +1,6 @@
-document.getElementById('select_pais').addEventListener('change', function() {
+document.getElementById('pais').addEventListener('change', function() {
   const country = this.value;
-  const departmentSelect = document.getElementById('select_departamento');
+  const departmentSelect = document.getElementById('departamento');
   departmentSelect.disabled = true;
 
   // Borrar opciones existentes
@@ -22,7 +22,7 @@ document.getElementById('select_pais').addEventListener('change', function() {
 });
 
 function addDepartmentsToSelect(departments) {
-  const departmentSelect = document.getElementById('select_departamento');
+  const departmentSelect = document.getElementById('departamento');
   departmentSelect.disabled = false;
 
   departments.forEach(function(department) {

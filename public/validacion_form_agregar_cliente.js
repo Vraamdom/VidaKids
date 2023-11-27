@@ -1,215 +1,151 @@
-const formulario_add_cliente = document.getElementById('form')
-const nombre_add_cliente = document.getElementById('nombre_cliente')
-const apellidio_add_cliente=document.getElementById('apellido_cliente')
-const telefono_add_cliente = document.getElementById('telefono_cliente')
-const email_add_cliente = document.getElementById('email_cliente')
-const password_add_cliente = document.getElementById('password_cliente')
-const password_confirm_add_cliente = document.getElementById('password_confirmar_cliente')
-const direccion_add_cliente = document.getElementById('direccion_cliente')
-const departamento_add_cliente = document.getElementById('select_departamento')
-const pais_add_cliente = document.getElementById('select_pais')
+const formulario = document.getElementById('formulario');
+const inputs = document.querySelectorAll('#formulario input');
+
+
+const expresiones = {
+    placa: /^[a-zA-Z]{3}\s\d{3}$/,
+    usuario: /^[a-zA-Z0-9\_\-]{4,16}$/, // Letras, numeros, guion y guion_bajo
+    nombre: /^[a-zA-ZÀ-ÿ\s]{1,40}$/, // Letras y espacios, pueden llevar acentos.
+    password: /^.{4,12}$/, // 4 a 12 digitos.
+    correo: /^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+$/,
+    telefono: /^\d{7,14}$/, // 7 a 14 numeros.
+    fecha: /^(?:(?:(?:0?[1-9]|1\d|2[0-8])[/](?:0?[1-9]|1[0-2])|(?:29|30)[/](?:0?[13-9]|1[0-2])|31[/](?:0?[13578]|1[02]))[/](?:0{2,3}[1-9]|0{1,2}[1-9]\d|0?[1-9]\d{2}|[1-9]\d{3})|29[/]0?2[/](?:\d{1,2}(?:0[48]|[2468][048]|[13579][26])|(?:0?[48]|[13579][26]|[2468][048])00))$/,
+    contraseñaFuerte:/(?=(.*[0-9]))(?=.*[\!@#$%^&*()\\[\]{}\-_+=|:;"'<>,./?])(?=.*[a-z])(?=(.*[A-Z]))(?=(.*)).{8,}/,
+    un_nombre : /^[A-Z\u00C0-\u00D6\u00D8-\u00DE][a-z\u00DF-\u00F6\u00F8-\u00FF ]*$/,    //valida que solo la primera letra se mayuscula y el resto min
+    texto: /^[A-Z\u00C0-\u00D6\u00D8-\u00DE][a-zA-Z\u00C0-\u00D6\u00D8-\u00DE ]*$/,
+    numero: /^\d+$/,
 
 
-
-
-
-// TRAE LA FECHA Y HORA ACTUAL AL CAMPO DATE TIME
-// const fechaHoraActual = new Date().toISOString().slice(0, 16);
-// datetime.value = fechaHoraActual
-
-
-
-
-formulario_add_cliente.addEventListener('submit', e => {
-    e.preventDefault()
-
-
-
-
-    validateInputs()
-})
-
-
-
-
-
-
-
-
-const setError = (element, message) => {
-    const inputControl = element.parentElement;
-    const errorDisplay = inputControl.querySelector('.error');
-
-
-
-
-    errorDisplay.innerText = message;
-    inputControl.classList.add('error');
-    inputControl.classList.remove('success')
-}
-
-
-
-
-const setSuccess = elemento => {
-    const inputControl = elemento.parentElement
-    const errorDisplay = inputControl.querySelector('.error')
-
-
-
-
-    errorDisplay.innerText = ""
-    inputControl.classList.add('success')
-    inputControl.classList.remove('error')
-}
-
-
-// VALIDA QUE EL FORMATO DEL CORREO ESTE BIEN(TEXTO @ TEXTO . TEXTO)
-const validarCorreo = email => {
-    const re = /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
-    return re.test(String(email).toLowerCase());
-}
-
-
-// VALIDA QUE TENGA ALMENOS 8 CARACTERES
-const validarContraseña = pass => {
-    const re = /^.{8,}$/
-    return re.test(pass)
-}
-
-
-// VALIDA QUE SOLO SEAN LETRAS(SE PUEDEN ESPACIOS Y LETRAS CON ACENTOS)
-const validarTexto = text => {
-    const re = /^[A-Za-zÁáÉéÍíÓóÚúÑñ\s]*$/
-    return re.test(String(text))
-}   
-
-
-// VALIDA QUE SOLO SE INGRESEN LETRAS Y QUE LA PRIMERA SEA MAYUSCULA (LA PUEDEN USAR PARA CAMPOS COMO NOMBRES)
-const validarNombre = nombre => {
-    const re = /^[A-Z\u00C0-\u00D6\u00D8-\u00DE][a-zA-Z\u00C0-\u00D6\u00D8-\u00DE ]*$/
-    return re.test(nombre)
-}
-
-const validarApellido = apellido => {
-    const re = /^[A-Z\u00C0-\u00D6\u00D8-\u00DE][a-zA-Z\u00C0-\u00D6\u00D8-\u00DE ]*$/
-    return re.test(apellido)
-}
-
-const validarDireccion = cadena => {
-    const re = /^[A-Za-z\u00C0-\u00D6\u00D8-\u00DE0-9\s#-]+$/
-    return re.test(cadena)
-  }
-  
-
-// VALIDA QUE SOLO SE PUEDAN INGRESAR NUMEROS
-const validarNumero = numero => {
-    const re = /^\d+$/
-    return re.test(numero)
-}
-
-
-const validateInputs = () => {
-    const direccionValue = direccion_add_cliente.value.trim()
-    const emailValue = email_add_cliente.value.trim()
-    const passValue = password_add_cliente.value.trim()
-    const paisValue = pais_add_cliente.value.trim()
-    const passConfirmValue = password_confirm_add_cliente.value.trim()
-    const nombreValue = nombre_add_cliente.value.trim()
-    const apellidoValue = apellidio_add_cliente.value.trim()
-    const telefonoValue = telefono_add_cliente.value.trim()
-
-    if (direccionValue === "") {
-        setError(direccion_add_cliente, 'No puedes dejar este campo vacio.')
-    } else if (!validarDireccion(direccionValue)) {
-        setError(direccion_add_cliente, 'No se permiten caracteres especiales.')
-    } else {
-        setSuccess(direccion_add_cliente)
-    }
-
-    if (apellidoValue === "") {
-        setError(apellidio_add_cliente, 'no se pueden dejar espacios vacios')   
-    }   else if (!validarApellido(apellidoValue)) {
-        setError(apellidio_add_cliente, 'No se permiten caracteres espciales, debe iniciar con letra mayuscula')       
-    }else{
-        setSuccess(apellidio_add_cliente)
-    }
-
-
-    if (nombreValue === "") {
-        setError(nombre_add_cliente, 'No puedes dejar este campo vacio.')
-    } else if (!validarNombre(nombreValue)) {
-        setError(nombre_add_cliente, 'Se debe iniciar con la letra mayuscula y no se permiten caracteres especiales.')
-    } else {
-        setSuccess(nombre_add_cliente)
-    }
-
-    if (telefonoValue === "") {
-        setError(telefono_add_cliente, 'No puedes dejar este campo vacio.')
-    } else if (!validarNumero(telefonoValue)) {
-        setError(telefono_add_cliente, 'Solo puedes ingresar números.')
-    } else if (telefonoValue.length > 10 || telefonoValue.length < 10) {
-        setError(telefono_add_cliente, 'Solo puedes ingresar un telefono real (10 Caracteres)')
-    } else {
-        setSuccess(telefono_add_cliente)
-    }
-
-
-
-
-    if (emailValue === "") {
-        setError(email_add_cliente, 'El campo correo eléctronico debe de ser llenado.')
-    } else if (!validarCorreo(emailValue)) {
-        setError(email_add_cliente, 'Ingresa un correo electrónico valido.')
-    } else {
-        setSuccess(email_add_cliente)
-    }
-
-
-
-
-    if (passValue === "") {
-        setError(password_add_cliente, 'El campo contraseña debe de ser llenado.')
-    } else if (!validarContraseña(passValue)) {
-        setError(password_add_cliente, 'La contraseña debe de tener al menos 8 caracteres.')
-    } else {
-        setSuccess(password_add_cliente)
-    }
-
-    if (passConfirmValue === "") {
-        setError(password_confirm_add_cliente, 'El campo contraseña debe de ser llenado.')
-    } else if (!validarContraseña(passConfirmValue)) {
-        setError(password_confirm_add_cliente, 'La contraseña debe de tener al menos 8 caracteres.')
-    } else if (passConfirmValue == passValue) {
-        setSuccess(password_confirm_add_cliente)  
-    }else{
-        setError(password_confirm_add_cliente, 'las contraseñas deben coincidir')
-    }
-
-    if (paisValue === "seleccionar") {
-        setError(pais_add_cliente, 'Debes de seleccionar una opción valida')
-        setError(departamento_add_cliente, 'debe de seleccionar un pais primero')
-    } else {
-        setSuccess(pais_add_cliente)
-        setSuccess(departamento_add_cliente)
-    }
-
-
-
-
-}
-
-
-if (nombre_add_cliente && password_add_cliente && email_add_cliente && telefono_add_cliente && pais_add_cliente && departamento_add_cliente && direccion_add_cliente ) {
-    
-function mostrarAlertaSucces() {
-    Swal.fire({
-        position: "center",
-        icon: "success",
-        title: "Your work has been saved",
-        showConfirmButton: false,
-        timer: 1500
-    });
 }  
 
+
+const campos = {
+    nombre: false,
+    apellido: false,
+    correo: false,
+    telefono: false,
+    pass: false,
+    pass2:false,
+    pais:false,
+    departamento:false
 }
+
+
+const validarFormulario = (e) => {
+    switch (e.target.name) {
+
+
+        case "nombre":
+            validarCampo(expresiones.un_nombre, e.target, 'nombre');
+            break;
+        case "apellido":
+            validarCampo(expresiones.un_nombre, e.target, 'apellido');
+            break;
+        case "correo":
+            validarCampo(expresiones.correo, e.target, 'correo');
+            break;
+
+            case "telefono":
+            validarCampo(expresiones.telefono, e.target, 'telefono');
+            break;
+            case "pass":
+            validarCampo(expresiones.password, e.target, 'pass');
+            break;
+            case "pass2":
+            validarCampo(expresiones.password, e.target, 'pass2');
+            break;
+
+
+
+    }
+
+
+}
+
+
+const validarCampo = (expresion, input, campo) => {
+    if (expresion.test(input.value)) {
+        document.getElementById(`grupo__${campo}`).classList.remove('formulario__grupo-incorrecto');
+        document.getElementById(`grupo__${campo}`).classList.add('formulario__grupo-correcto');
+        document.querySelector(`#grupo__${campo} i`).classList.add('fa-check-circle');
+        document.querySelector(`#grupo__${campo} i`).classList.remove('fa-times-circle');
+        document.querySelector(`#grupo__${campo} .formulario__input-error`).classList.remove('formulario__input-error-activo');
+        campos[campo] = true;
+    } else {
+        document.getElementById(`grupo__${campo}`).classList.add('formulario__grupo-incorrecto');
+        document.getElementById(`grupo__${campo}`).classList.remove('formulario__grupo-correcto');
+        document.querySelector(`#grupo__${campo} i`).classList.add('fa-times-circle');
+        document.querySelector(`#grupo__${campo} i`).classList.remove('fa-check-circle');
+        document.querySelector(`#grupo__${campo} .formulario__input-error`).classList.add('formulario__input-error-activo');
+        campos[campo] = false;
+    }
+}
+
+
+const validarPassword2 = () => {
+    const inputPassword1 = document.getElementById('pass2');
+    const inputPassword2 = document.getElementById('pass2');
+
+
+    if (inputPassword1.value !== inputPassword2.value) {
+        document.getElementById(`grupo__password2`).classList.add('formulario__grupo-incorrecto');
+        document.getElementById(`grupo__password2`).classList.remove('formulario__grupo-correcto');
+        document.querySelector(`#grupo__password2 i`).classList.add('fa-times-circle');
+        document.querySelector(`#grupo__password2 i`).classList.remove('fa-check-circle');
+        document.querySelector(`#grupo__password2 .formulario__input-error`).classList.add('formulario__input-error-activo');
+        campos['password'] = false;
+    } else {
+        document.getElementById(`grupo__password2`).classList.remove('formulario__grupo-incorrecto');
+        document.getElementById(`grupo__password2`).classList.add('formulario__grupo-correcto');
+        document.querySelector(`#grupo__password2 i`).classList.remove('fa-times-circle');
+        document.querySelector(`#grupo__password2 i`).classList.add('fa-check-circle');
+        document.querySelector(`#grupo__password2 .formulario__input-error`).classList.remove('formulario__input-error-activo');
+        campos['password'] = true;
+    }
+}
+
+
+inputs.forEach((input) => {
+    input.addEventListener('keyup', validarFormulario);
+    input.addEventListener('blur', validarFormulario);
+});
+
+
+formulario.addEventListener('submit', (e) => {
+    e.preventDefault();
+
+    if (campos.nombre && campos.apellido && campos.correo  && campos.telefono  && campos.pass && campos.pass2 && campos.pais != "seleccionar" && campos.departamento != "seleccionar") {
+        Swal.fire({
+            position: "center",
+            icon: "success",
+            title: "Se ha guardado el resgistro",
+            showConfirmButton: false,
+            timer: 1500
+          });
+    } else {
+        document.getElementById('formulario__mensaje').classList.add('formulario__mensaje-activo');
+    }
+});
+
+const boton_volver = document.getElementById('boton_volver')
+const volver_index = () =>{
+    Swal.fire({
+        title: "Quieres salir del formulario?",
+        showDenyButton: true,
+        confirmButtonText: "Seguir",
+        denyButtonText: `Volver`
+      }).then((result) => {
+        /* Read more about isConfirmed, isDenied below */
+        if (result.isConfirmed) {
+            Swal.fire("Seguiras en el fomrulario", "", "success");
+        } else if (result.isDenied) {
+          Swal.fire("Redireccionando...", "", "info");
+          location.href = 'lista_clientes'
+        }
+      });
+}
+boton_volver.addEventListener('click', e =>{
+    e.preventDefault()
+
+    volver_index()
+})

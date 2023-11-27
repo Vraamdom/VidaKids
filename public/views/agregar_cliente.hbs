@@ -8,7 +8,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <title>Vidakids |Edit Client</title>
+    <title>Vidakids |Home</title>
     {{>header}}
 
 </head>
@@ -19,7 +19,9 @@
             <div class="col-md-3 left_col">
                 <div class="left_col scroll-view">
                     <div class="navbar nav_title" style="border: 0;">
-                        <a href="index.html" class="site_title"><i class="fa fa-paw"></i> <span>VidaKids</span></a>
+                        <a href="/" class="site_title">
+                            <h1>Vida<span>kids</span></h1>
+                        </a>
                     </div>
 
                     <div class="clearfix"></div>
@@ -30,8 +32,8 @@
                             <img src="images/img.jpg" alt="..." class="img-circle profile_img">
                         </div>
                         <div class="profile_info">
-                            <span>Bienvenido,</span>
-                            <h2>Admin</h2>
+                            <span>Welcome,</span>
+                            <h2>{{nombre}}</h2>
                         </div>
                     </div>
                     <!-- /menu profile quick info -->
@@ -43,35 +45,35 @@
                         <div class="menu_section">
                             <h3>General</h3>
                             <ul class="nav side-menu">
-                                <li><a><i class="fa fa-home"></i> Inicio <span class="fa fa-chevron-down"></span></a>
+                                <li><a><i class="fa fa-home"></i> Home <span class="fa fa-chevron-down"></span></a>
                                     <ul class="nav child_menu">
-                                        <li><a href="index.html">Dashboard</a></li>
+                                        <li><a href="/">Inicio</a></li>
+                                        {{!-- <li><a href="index2.html">Dashboard2</a></li>
+                                        <li><a href="index3.html">Dashboard3</a></li> --}}
                                     </ul>
                                 </li>
                                 <li><a><i class="fa fa-edit"></i> Acudientes <span
                                             class="fa fa-chevron-down"></span></a>
                                     <ul class="nav child_menu">
-                                        <li><a href="form.html">General Form</a></li>
-
+                                        {{!-- <li><a href="form.html">General Form</a></li> --}}
+                                        <li><a href="lista_Acudiente">Lista de Acudiente</a></li>
+                                        <li><a href="registrar_Acudiente">Registrar Acudiente</a></li>
+                                        {{!-- <li><a href="form_wizards.html">Form Wizard</a></li>
+                                        <li><a href="form_upload.html">Form Upload</a></li>
+                                        <li><a href="form_buttons.html">Form Buttons</a></li> --}}
                                     </ul>
                                 </li>
                                 <li><a><i class="fa fa-desktop"></i> Servicios <span
                                             class="fa fa-chevron-down"></span></a>
                                     <ul class="nav child_menu">
-                                        <li><a href="general_elements.html">Categoria Servicios</a></li>
-                                        <li><a href="media_gallery.html">Eventos</a></li>
-                                        <li><a href="typography.html"></a>Citas</li>
-                                        <li><a href="icons.html">Icons</a>Profesionales voluntarios</li>
-
+                                        <li><a href="">Categoria de servicios</a></li>
+                                        <li><a href="eventos">Eventos</a></li>
+                                        <li><a href="">Citas</a></li>
+                                        <li><a href="">Profesionales Voluntarios</a></li>
                                     </ul>
                                 </li>
-                                <li><a><i class="fa fa-table"></i> Donaciones <span
-                                            class="fa fa-chevron-down"></span></a>
-                                    <ul class="nav child_menu">
-                                        <li><a href="tables.html">Tables</a></li>
-                                    </ul>
-                                </li>
-                                <li><a><i class="fa fa-bar-chart-o"></i> Ventas <span
+                               
+                               <li><a><i class="fa fa-bar-chart-o"></i> Ventas <span
                                             class="fa fa-chevron-down"></span></a>
                                     <ul class="nav child_menu">
                                         <li><a href="lista_ventas">Gestion de Ventas</a></li>
@@ -80,44 +82,26 @@
                                         <li><a href="#">Gestion de categoria de Productos</a></li>
                                     </ul>
                                 </li>
+
                             </ul>
                         </div>
 
-
                     </div>
                     <!-- /sidebar menu -->
-
-                    <!-- /menu footer buttons -->
-                    <div class="sidebar-footer hidden-small">
-                        <a data-toggle="tooltip" data-placement="top" title="Settings">
-                            <span class="glyphicon glyphicon-cog" aria-hidden="true"></span>
-                        </a>
-                        <a data-toggle="tooltip" data-placement="top" title="FullScreen">
-                            <span class="glyphicon glyphicon-fullscreen" aria-hidden="true"></span>
-                        </a>
-                        <a data-toggle="tooltip" data-placement="top" title="Lock">
-                            <span class="glyphicon glyphicon-eye-close" aria-hidden="true"></span>
-                        </a>
-                        <a data-toggle="tooltip" data-placement="top" title="Logout" href="login.html">
-                            <span class="glyphicon glyphicon-off" aria-hidden="true"></span>
-                        </a>
-                    </div>
-                    <!-- /menu footer buttons -->
                 </div>
             </div>
-
             <!-- top navigation -->
             <div class="top_nav">
                 <div class="nav_menu">
                     <div class="nav toggle">
-                        <a id="menu_toggle"><i class="fa fa-bars"></i></a>
+                        <a id="menu_toggle"><i class="fa fa-bars" style="color:#f0cc2b;"></i></a>
                     </div>
                     <nav class="nav navbar-nav">
                         <ul class=" navbar-right">
                             <li class="nav-item dropdown open" style="padding-left: 15px;">
                                 <a href="javascript:;" class="user-profile dropdown-toggle" aria-haspopup="true"
                                     id="navbarDropdown" data-toggle="dropdown" aria-expanded="false">
-                                    <img src="images/img.jpg" alt="">Admin
+                                    <img src="images/img.jpg" alt="">{{nombre}}
                                 </a>
                                 <div class="dropdown-menu dropdown-usermenu pull-right"
                                     aria-labelledby="navbarDropdown">
@@ -127,15 +111,15 @@
                                         <span>Settings</span>
                                     </a>
                                     <a class="dropdown-item" href="javascript:;">Help</a>
-                                    <a class="dropdown-item" href="login.html"><i class="fa fa-sign-out pull-right"></i>
-                                        Log Out</a>
+                                    <a class="dropdown-item" href="login"><i class="fa fa-sign-out pull-right"></i>
+                                        Cerrar sesión</a>
                                 </div>
                             </li>
 
                             <li role="presentation" class="nav-item dropdown open">
                                 <a href="javascript:;" class="dropdown-toggle info-number" id="navbarDropdown1"
                                     data-toggle="dropdown" aria-expanded="false">
-                                    <i class="fa fa-envelope-o"></i>
+                                    <i class="fa fa-envelope-o " style="color: #f0cc2b;"></i>
                                     <span class="badge bg-green">6</span>
                                 </a>
                                 <ul class="dropdown-menu list-unstyled msg_list" role="menu"
@@ -207,73 +191,105 @@
                 </div>
             </div>
             <!-- /top navigation -->
-           
 
             <!-- page content -->
             <div class="right_col" role="main">
+                <!-- top tiles -->
+
+                <!-- /top tiles -->
+
                 <div class="row">
-                    <div class="col-md-12 col-sm-12">
-                        <div class="bloque-formulario">
-                            <div class="formulario">
-                                <a href="lista_clientes"><button id="btn-volver" type="button">Volver</button></a>
-                                <h1 class="titulo_formulario">Agregar Cliente</h1>
-                                <form action="" id="form">
-                                    <div class="formulario_bloque-uno">
+                    <div class="col-md-12 col-sm-12 ">
+                        <form action="" class="formulario" id="formulario">
+                            <h2>Agregar Cliente</h2>
 
-                                        <div class="input-control">
-                                            <label for="text">Nombre Cliente</label>
-                                            <input type="text" name="" id="nombre_cliente">
-                                            *requerido
-                                            <div class="error"></div>
+                            <div class="columnas">
+                                <div class="columna">
+                                    <!-- Grupo: beneficiario -->
+                                    <div class="formulario__grupo" id="grupo__nombre">
+                                        <label for="nombre" class="formulario__label">Nombre</label>
+                                        <div class="formulario__grupo-input">
+                                            <input type="text" class="formulario__input" name="nombre" id="nombre"
+                                                placeholder="">
+                                            <i class="formulario__validacion-estado fas fa-times-circle"></i>
                                         </div>
-
-                                        <div class="input-control">
-                                            <label for="text">Apellido Cliente</label>
-                                            <input type="text" name="" id="apellido_cliente">
-                                            *requerido
-                                            <div class="error"></div>
-                                        </div>
-
-                                        <div class="input-control">
-                                            <label for="pass">Contraseña</label>
-                                            <input type="password" name="" id="password_cliente">
-                                            *requerido
-                                            <div class="error"></div>
-                                        </div>
-
-                                        <div class="input-control">
-                                            <label for="password-confirm">Confirmar Contraseña</label>
-                                            <input type="password" name="" id="password_confirmar_cliente">
-                                            *requerido
-                                            <div class="error"></div>
-                                        </div>
-
-
-
-
-
-
-
+                                        <p class="formulario__input-error">El campo no puede contener numeros</p>
                                     </div>
 
-                                    <div class="formulario_bloque-dos">
-                                        <div class="input-control">
-                                            <label for="email">Correo</label>
-                                            <input type="email" name="" id="email_cliente">
-                                            *requerido
-                                            <div class="error"></div>
-                                        </div>
 
-                                        <div class="input-control">
-                                            <label for="text">Telefono</label>
-                                            <input type="text" name="" id="telefono_cliente">
-                                            *requerido
-                                            <div class="error"></div>
+                                    <!-- Grupo: edad -->
+                                    <div class="formulario__grupo" id="grupo__apellido">
+                                        <label for="apellido" class="formulario__label">Apellido</label>
+                                        <div class="formulario__grupo-input">
+                                            <input type="text" class="formulario__input" name="apellido" id="apellido"
+                                                placeholder="">
+                                            <i class="formulario__validacion-estado fas fa-times-circle"></i>
                                         </div>
+                                        <p class="formulario__input-error">El campo no puede contener letras ni estar
+                                            vacio.</p>
+                                    </div>
 
-                                        <div class="input-control">
-                                            <label for="select">Pais</label>
-                                            <select name="" id="select_pais">
+
+                                    <!-- Grupo: placa_vehiculo_p -->
+                                    <div class="formulario__grupo" id="grupo__correo">
+                                        <label for="correo" class="formulario__label">Correo electronico
+                                            personal</label>
+                                        <div class="formulario__grupo-input">
+                                            <input type="text" class="formulario__input" name="correo"
+                                                id="correo" placeholder="">
+                                            <i class="formulario__validacion-estado fas fa-times-circle"></i>
+                                        </div>
+                                        <p class="formulario__input-error">El campo targeta de identidad no puede
+                                            contener
+                                            letras.
+                                        </p>
+                                    </div>
+
+
+                                    <!-- Grupo: telefono -->
+                                    <div class="formulario__grupo" id="grupo__telefono">
+                                        <label for="telefono" class="formulario__label">Telefono</label>
+                                        <div class="formulario__grupo-input">
+                                            <input type="text" class="formulario__input" name="telefono"
+                                                id="telefono" placeholder="">
+                                            <i class="formulario__validacion-estado fas fa-times-circle"></i>
+                                        </div>
+                                        <p class="formulario__input-error">El campo no puede contener letras ni estar
+                                            vacio.</p>
+                                    </div>
+                                </div>
+
+
+                                <div class="columna">
+                                   <!-- Grupo: pass -->
+                                    <div class="formulario__grupo" id="grupo__pass">
+                                        <label for="pass" class="formulario__label">Contraseña</label>
+                                        <div class="formulario__grupo-input">
+                                            <input type="text" class="formulario__input" name="pass"
+                                                id="pass" placeholder="">
+                                            <i class="formulario__validacion-estado fas fa-times-circle"></i>
+                                        </div>
+                                        <p class="formulario__input-error">El campo no puede contener letras ni estar
+                                            vacio.</p>
+                                    </div>
+
+                                    <!-- Grupo: pass2 -->
+                                    <div class="formulario__grupo" id="grupo__pass2">
+                                        <label for="pass" class="formulario__label">Confirmar contraseña</label>
+                                        <div class="formulario__grupo-input">
+                                            <input type="text" class="formulario__input" name="pass2"
+                                                id="pass2" placeholder="">
+                                            <i class="formulario__validacion-estado fas fa-times-circle"></i>
+                                        </div>
+                                        <p class="formulario__input-error">El campo no puede contener letras ni estar
+                                            vacio.</p>
+                                    </div>
+
+                                    <!-- Grupo: asistencia -->
+                                    <div class="formulario__grupo" id="grupo__pais">
+                                        <label for="pais" class="formulario__label">Pais</label>
+                                        <div class="formulario__grupo-input">
+                                            <select id="pais" name="pais">
                                                 <option value="seleccionar">seleccionar</option>
                                                 <option value="colombia">Colombia</option>
                                                 <option value="ecuador">Ecuador</option>
@@ -281,58 +297,67 @@
                                                 <option value="chile">Chile</option>
                                                 <option value="brasil">Brasil</option>
                                             </select>
-                                            <div class="error"></div>
                                         </div>
-
-                                        <div class="input-control">
-                                            <label for="select">Departamento</label>
-                                            <select name="" id="select_departamento" disabled>
-                                                <option value="seleccionar">seleccionar</option>
-                                            </select>
-                                            <div class="error"></div>
-                                        </div>
-
-
-
-                                        <div class="input-control">
-                                            <label for="text">direccion</label>
-                                            <input type="text" name="" id="direccion_cliente">
-                                            <div class="error"></div>
-                                        </div>
-
-
-
-
-
                                     </div>
-                                    <button type="submit" class="boton" name="" id="boton">Agregar Cliente</button>
-                                    
-                                   
-                                </form>
+
+                                    <div class="formulario__grupo" id="grupo__departamento">
+                                        <label for="departamento" class="formulario__label">Departamento</label>
+                                        <div class="formulario__grupo-input">
+                                            <select id="departamento" name="departamento" disabled>
+                                                <option value="seleccionar">seleccionar</option>
+                                               
+                                            </select>
+                                        </div>
+                                    </div>
+
+
+
+                                </div>
+
+
                             </div>
 
-                        </div>
+                            <div class="formulario__mensaje" id="formulario__mensaje">
+                                <p><i class="fas fa-exclamation-triangle"></i> <b>Error:</b> Por favor rellena el
+                                    formulario
+                                    correctamente. </p>
+                            </div>
+
+
+                            <div class="botones">
+                                <div class="formulario__grupo formulario__grupo-btn-enviar">
+                                    <button type="submit" class="formulario__btn">Agregar nuevo cliente</button>
+                                    <p class="formulario__mensaje-exito" id="formulario__mensaje-exito">Formulario
+                                        enviado
+                                        exitosamente!</p>
+                                </div>
+
+                                <div class="formulario__grupo formulario__grupo-btn-cancelar">
+                                    <button type="submit" class="formulario__btn-cancelar"
+                                        id="boton_volver">Cancelar</button>
+                                    <p class="formulario__mensaje-exito" id="formulario__mensaje-exito">Formulario
+                                        enviado
+                                        exitosamente!</p>
+                                </div>
+                            </div>
+                        </form>
+
+
+                        <div class="clearfix"></div>
 
                     </div>
-                </div>
 
-                <div class="clearfix"></div>
-                <div class="clearfix"></div>
+                </div>
+                <br />
+
+
             </div>
+
+
         </div>
     </div>
-
-    </div>
-    </div>
-    </div>
-    </div>
-    </div>
-    </div>
-    </div>
+     <script src="https://kit.fontawesome.com/2c36e9b7b1.js" crossorigin="anonymous"></script>
     {{>footer_validacion_clientes}}
-
-    </div>
-    </div>
 
 
 

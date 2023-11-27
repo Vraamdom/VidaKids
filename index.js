@@ -5,7 +5,7 @@ const path = require('path')
 
 const app = express()
 
-const port = 8181
+const port = 4545
 
 
 // Contenido estatico del servidor en este caso son las vistas
@@ -21,6 +21,10 @@ hbs.registerPartials(__dirname + '/public/views/partials')
 
 app.get('/', (req, res) =>{
     res.render('index')
+})
+
+app.get('/pruebas', (req, res) =>{
+    res.render('prueba')
 })
 
 app.get('/productos', (req, res) =>{

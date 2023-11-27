@@ -78,13 +78,11 @@
                                         <li><a href="tables.html">Tables</a></li>
                                     </ul>
                                 </li>
-                               <li><a><i class="fa fa-bar-chart-o"></i> Ventas <span
+                                <li><a><i class="fa fa-bar-chart-o"></i> Ventas <span
                                             class="fa fa-chevron-down"></span></a>
                                     <ul class="nav child_menu">
-                                        <li><a href="lista_ventas">Gestion de Ventas</a></li>
-                                        <li><a href="lista_clientes">Gestion de Clientes</a></li>
-                                        <li><a href="#">Gestion de Productos</a></li>
-                                        <li><a href="#">Gestion de categoria de Productos</a></li>
+                                        <li><a href="chartjs.html">Chart JS</a></li>
+
                                     </ul>
                                 </li>
 
@@ -206,7 +204,7 @@
                 <div class="row">
                     <div class="col-md-12 col-sm-12 ">
                         <form action="" class="formulario" id="formulario">
-                            <h2>Agregar Cliente</h2>
+                            <h2>Agregar participante</h2>
 
                             <div class="columnas">
                                 <div class="columna">
@@ -296,11 +294,8 @@
                                         <div class="formulario__grupo-input">
                                             <select id="pais" name="pais">
                                                 <option value="seleccionar">seleccionar</option>
-                                                <option value="colombia">Colombia</option>
-                                                <option value="ecuador">Ecuador</option>
-                                                <option value="argentina">Argentina</option>
-                                                <option value="chile">Chile</option>
-                                                <option value="brasil">Brasil</option>
+                                                <option value="Asiste">Asiste</option>
+                                                <option value="No asiste">No asiste</option>
                                             </select>
                                         </div>
                                     </div>
@@ -308,9 +303,10 @@
                                     <div class="formulario__grupo" id="grupo__departamento">
                                         <label for="departamento" class="formulario__label">Departamento</label>
                                         <div class="formulario__grupo-input">
-                                            <select id="departamento" name="departamento" disabled>
+                                            <select id="departamento" name="departamento">
                                                 <option value="seleccionar">seleccionar</option>
-                                               
+                                                <option value="Asiste">Asiste</option>
+                                                <option value="No asiste">No asiste</option>
                                             </select>
                                         </div>
                                     </div>
@@ -331,7 +327,7 @@
 
                             <div class="botones">
                                 <div class="formulario__grupo formulario__grupo-btn-enviar">
-                                    <button type="submit" class="formulario__btn">Agregar nuevo cliente</button>
+                                    <button type="submit" class="formulario__btn">Enviar</button>
                                     <p class="formulario__mensaje-exito" id="formulario__mensaje-exito">Formulario
                                         enviado
                                         exitosamente!</p>
