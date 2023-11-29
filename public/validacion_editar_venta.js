@@ -44,14 +44,6 @@ const validarFormulario = (e) => {
             validarCampo(expresiones.fecha, e.target, 'fecha_venta');
             break;
 
-        case "precio_total_venta":
-            validarCampo(expresiones.money, e.target, 'precio_total_venta');
-            break;
-
-     
-
-
-
 
     }
 
@@ -110,11 +102,11 @@ inputs.forEach((input) => {
 formulario.addEventListener('submit', (e) => {
     e.preventDefault();
 
-    if (campos.nombre_cliente_venta && campos.apellido_cliente_venta && campos.precio_total_venta && campos.select_estado_venta.value != "seleccione") {
+    if (campos.nombre_cliente_venta && campos.apellido_cliente_venta && campos.precio_total_venta && campos.select_estado_venta.value !== "seleccione" && campos.select_estado_venta.selectedIndex !== 0) {
         Swal.fire({
             position: "center",
             icon: "success",
-            title: "Se ha guardado el resgistro",
+            title: "Se ha guardado el registro",
             showConfirmButton: false,
             timer: 1500
         });
@@ -145,3 +137,6 @@ boton_volver.addEventListener('click', e => {
 
     volver_index()
 })
+
+
+

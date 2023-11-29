@@ -1,65 +1,75 @@
 const datos_p = [{
     "id": 1,
-    "nombre_cliente_venta": "Sebastian ",
-    "apellido_cliente_venta": "Castaño",
-    "fecha_venta": '07/09/2023',
-    "precio_total": "500.000$"
+    "nombre_cliente_venta": "Andrea ",
+    "apellido_cliente_venta": "Pirlo",
+    "fecha_venta": '05/10/2023',
+    "precio_total": "300.000$",
+    "estado_venta": "en ruta"
 
 
 }, {
     "id": 2,
-    "nombre_cliente_venta": "Sebastian ",
-    "apellido_cliente_venta": "Castaño",
-    "fecha_venta": '07/09/2023',
-    "precio_total": "500.000$"
+    "nombre_cliente_venta": "Jorge ",
+    "apellido_cliente_venta": "Amaya",
+    "fecha_venta": '23/05/2023',
+    "precio_total": "500.000$",
+    "estado_venta": "entregado"
 }, {
     "id": 3,
     "nombre_cliente_venta": "Sebastian ",
     "apellido_cliente_venta": "Castaño",
     "fecha_venta": '07/09/2023',
-    "precio_total": "500.000$"
+    "precio_total": "880.000$",
+    "estado_venta": "enviado"
 }, {
     "id": 4,
-    "nombre_cliente_venta": "Sebastian ",
-    "apellido_cliente_venta": "Castaño",
-    "fecha_venta": '07/09/2023',
-    "precio_total": "500.000$"
+    "nombre_cliente_venta": "Ivan ",
+    "apellido_cliente_venta": "Castro",
+    "fecha_venta": '05/12/2023',
+    "precio_total": "600.000$",
+    "estado_venta": "sin enviar"
 }, {
     "id": 5,
-    "nombre_cliente_venta": "Sebastian ",
-    "apellido_cliente_venta": "Castaño",
-    "fecha_venta": '07/09/2023',
-    "precio_total": "500.000$"
+    "nombre_cliente_venta": "Camilo ",
+    "apellido_cliente_venta": "Restrepo",
+    "fecha_venta": '12/05/2023',
+    "precio_total": "700.000$",
+    "estado_venta": "empaquetado"
 }, {
     "id": 6,
-    "nombre_cliente_venta": "Sebastian ",
-    "apellido_cliente_venta": "Castaño",
-    "fecha_venta": '07/09/2023',
-    "precio_total": "500.000$"
+    "nombre_cliente_venta": "Ryan",
+    "apellido_cliente_venta": "Gyal",
+    "fecha_venta": '31/12/2023',
+    "precio_total": "990.000$",
+    "estado_venta": "empaquetado"
 }, {
     "id": 7,
-    "nombre_cliente_venta": "Sebastian ",
-    "apellido_cliente_venta": "Castaño",
-    "fecha_venta": '07/09/2023',
-    "precio_total": "500.000$"
+    "nombre_cliente_venta": "Isabel ",
+    "apellido_cliente_venta": "Estrada",
+    "fecha_venta": '09/22/2023',
+    "precio_total": "5.000$",
+    "estado_venta": "en ruta"
 }, {
     "id": 8,
-    "nombre_cliente_venta": "Sebastian ",
-    "apellido_cliente_venta": "Castaño",
-    "fecha_venta": '07/09/2023',
-    "precio_total": "500.000$"
+    "nombre_cliente_venta": "Andres ",
+    "apellido_cliente_venta": "Martinez",
+    "fecha_venta": '30/12/2023',
+    "precio_total": "9.000$",
+    "estado_venta": "enviado"
 }, {
     "id": 9,
-    "nombre_cliente_venta": "Sebastian ",
-    "apellido_cliente_venta": "Castaño",
-    "fecha_venta": '07/09/2023',
-    "precio_total": "500.000$"
+    "nombre_cliente_venta": "Hector ",
+    "apellido_cliente_venta": "Vasquez",
+    "fecha_venta": '31/02/2023',
+    "precio_total": "5.000.000$",
+    "estado_venta": "sin entregar"
 }, {
     "id": 10,
-    "nombre_cliente_venta": "Sebastian ",
-    "apellido_cliente_venta": "Castaño",
-    "fecha_venta": '07/09/2023',
-    "precio_total": "500.000$"
+    "nombre_cliente_venta": "Quentin ",
+    "apellido_cliente_venta": "Tremblin",
+    "fecha_venta": '20/09/2023',
+    "precio_total": "1.000$",
+    "estado_venta": "entregado"
 }]
 
 const table_p = document.getElementById('tblP');
@@ -84,10 +94,10 @@ function showdatos_p(page) {
         row.insertCell(2).textContent = item.apellido_cliente_venta;
         row.insertCell(3).textContent = item.fecha_venta;
         row.insertCell(4).textContent = item.precio_total;
+        row.insertCell(5).textContent = item.estado_venta;
       
 
-
-        const opcionesCell = row.insertCell(5);
+        const opcionesCell = row.insertCell(6);
         opcionesCell.className = 'Opciones';
 
         opcionesCell.innerHTML = `
