@@ -1,4 +1,4 @@
-.detalle-venta {
+.detalle-venta, .detalle-cliente {
     max-width: 600px;
     margin: 0 auto;
     padding: 20px;
@@ -25,3 +25,7 @@
 .detalle-venta #productos li {
     margin-bottom: 5px;
 }
+
+
+
+

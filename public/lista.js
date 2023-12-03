@@ -33,7 +33,7 @@ function exportTableToExcel(tableID, filename = '') {
    
     // Agregar encabezados a la nueva tabla
     var headerRow = filteredTable.createTHead().insertRow(0);
-    headerRow.innerHTML = "<th>ID</th><th>Servicio</th><th>Categoria</th><th>Fecha de registro</th><th>Disponibilidad</th>";
+    headerRow.innerHTML = "<th>ID</th><th>nombre</th><th>apellido</th><th>correo</th><th>Fecha de Venta</th><th>Direccion</th><th>telefono</th>";
    
     // Recorrer las filas de la tabla original y copiar solo las columnas deseadas a la nueva tabla
     for (var i = 0; i < rows.length; i++) {
@@ -51,7 +51,7 @@ function exportTableToExcel(tableID, filename = '') {
     var tableHTML = filteredTable.outerHTML.replace(/ /g, '%20');
    
     // Especificar el nombre de archivo
-    filename = filename ? filename + '.xls' : 'tabla_servicios.xls';
+    filename = filename ? filename + '.xls' : 'tabla_clientes.xls';
    
     // Crear el elemento de enlace de descarga
     downloadLink = document.createElement("a");

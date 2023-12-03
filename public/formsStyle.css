@@ -354,12 +354,13 @@ body {
 
 
   
-  .boton-eliminar , .boton-agregar{
+  .agregar_select_producto{
     width: 100px;
     height: 35px;
     position: relative;
-    left: 400px;
-    top: -20px;
+    right: 315px;
+    top: -13px;
+    
 
 
   }

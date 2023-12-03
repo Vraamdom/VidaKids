@@ -102,7 +102,7 @@ inputs.forEach((input) => {
 formulario.addEventListener('submit', (e) => {
     e.preventDefault();
 
-    if (campos.nombre_cliente_venta && campos.apellido_cliente_venta && campos.precio_total_venta && campos.select_estado_venta.value !== "seleccione" && campos.select_estado_venta.selectedIndex !== 0) {
+    if ( campos.select_estado_venta.value !== "seleccione") {
         Swal.fire({
             position: "center",
             icon: "success",
